@@ -67,6 +67,7 @@ class LoginViewController: UIViewController {
         let font2 = UIFont.boldSystemFont(ofSize: 13)
 
         let color1 = UIColor.darkGray
+
         guard let color2 = UIColor.facebookColor else { return }
 
         let attributes = generateButtonAttribute(
@@ -78,5 +79,4 @@ class LoginViewController: UIViewController {
         self.registerButton.setAttributedTitle(attributes, for: .normal)
 
     }
-    
 }

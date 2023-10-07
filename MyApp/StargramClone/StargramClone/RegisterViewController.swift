@@ -10,6 +10,13 @@ import UIKit
 class RegisterViewController: UIViewController {
     
     //MARK: - Properties
+    var email: String = ""
+    var name: String = ""
+    var nickname: String = ""
+    var password: String = ""
+    
+    var userInfo: ((UserInfo) -> Void)?
+    
     // 유효성검사를 위한 프로퍼티
     var isValidEmail = false {
         didSet { // 프로퍼티 옵저버
@@ -44,21 +51,16 @@ class RegisterViewController: UIViewController {
     var textFields: [UITextField] { // 연산 프로퍼티
         [emailTextField, nameTextField, nickNameTextField, passwordTextField]
     }
+    
     //MARK: - Lifecycle
-
-    
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextField()
         
-
+        // bug fix (스와이프)
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
     }
     
-    
-    
-
     //MARK: - Actions
     @objc
     func textFieldEditingChanged(_ sender: UITextField) {
@@ -67,15 +69,19 @@ class RegisterViewController: UIViewController {
         switch sender {
         case emailTextField:
             self.isValidEmail = text.isValidEmail()
+            self.email = text
             
         case nameTextField:
             self.isValidName = text.count > 2
+            self.name = text
             
         case nickNameTextField:
             self.isValidNickName = text.count > 2
+            self.nickname = text
             
         case passwordTextField:
             self.isValidPassword = text.isValidPassword()
+            self.password = text
 
         default:
             fatalError("Missing TextField..")
@@ -83,10 +89,21 @@ class RegisterViewController: UIViewController {
     }
     
     
+    @IBAction func backButtonDidTap(_ sender: UIBarButtonItem) {
+        // 뒤로가기
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
     
-    
+    @IBAction func registerButtonDidTap(_ sender: UIButton) {
+        // 뒤로가기
+        self.navigationController?.popViewController(animated: true)
+        
+        let userInfo = UserInfo(email: self.email, name: self.name, nickname: self.nickname, password: self.password)
+        
+        self.userInfo?(userInfo)
+    }
     
     
     //MARK: - Helpers
@@ -94,8 +111,6 @@ class RegisterViewController: UIViewController {
         textFields.forEach { tf in
             tf.addTarget(self, action: #selector( textFieldEditingChanged(_:)), for: .editingChanged)
         }
-        
-       
     }
     
     // 사용자가 입력한 회원정보를 확인하고 -> UI 업데이트

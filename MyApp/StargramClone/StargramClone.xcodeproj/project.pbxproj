@@ -16,6 +16,8 @@
 		5C8EE0852ACD3B4D007AA3C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C8EE0832ACD3B4D007AA3C1 /* LaunchScreen.storyboard */; };
 		5C8EE08D2ACD42F7007AA3C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8EE08C2ACD42F7007AA3C1 /* LoginViewController.swift */; };
 		5C8EE08F2ACD45D6007AA3C1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8EE08E2ACD45D6007AA3C1 /* RegisterViewController.swift */; };
+		5CA129BC2AD1A13E00F380C0 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA129BB2AD1A13E00F380C0 /* UserInfo.swift */; };
+		5CA129BE2AD1A6B700F380C0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA129BD2AD1A6B700F380C0 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		5C8EE0862ACD3B4D007AA3C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C8EE08C2ACD42F7007AA3C1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5C8EE08E2ACD45D6007AA3C1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		5CA129BB2AD1A13E00F380C0 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		5CA129BD2AD1A6B700F380C0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 				5C8EE07A2ACD3B4D007AA3C1 /* SceneDelegate.swift */,
 				5C8EE07E2ACD3B4D007AA3C1 /* Main.storyboard */,
 				5C11A48B2ACEBBD60059E5A2 /* UIViewController+Extension.swift */,
+				5CA129BD2AD1A6B700F380C0 /* TestViewController.swift */,
+				5CA129BB2AD1A13E00F380C0 /* UserInfo.swift */,
 				5C11A4892ACEB95B0059E5A2 /* UIView+Extension.swift */,
 				5C8EE08C2ACD42F7007AA3C1 /* LoginViewController.swift */,
 				5C8EE08E2ACD45D6007AA3C1 /* RegisterViewController.swift */,
@@ -149,9 +155,11 @@
 			files = (
 				5C11A48C2ACEBBD60059E5A2 /* UIViewController+Extension.swift in Sources */,
 				5C8EE08D2ACD42F7007AA3C1 /* LoginViewController.swift in Sources */,
+				5CA129BE2AD1A6B700F380C0 /* TestViewController.swift in Sources */,
 				5C8EE0792ACD3B4D007AA3C1 /* AppDelegate.swift in Sources */,
 				5C8EE07B2ACD3B4D007AA3C1 /* SceneDelegate.swift in Sources */,
 				5C11A48A2ACEB95B0059E5A2 /* UIView+Extension.swift in Sources */,
+				5CA129BC2AD1A13E00F380C0 /* UserInfo.swift in Sources */,
 				5C8EE08F2ACD45D6007AA3C1 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

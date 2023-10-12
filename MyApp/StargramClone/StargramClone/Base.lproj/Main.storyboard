@@ -351,6 +351,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="xxt-I3-0m0"/>
+                    <navigationItem key="navigationItem" id="AC2-Kz-WAk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Yf-K5-Vtm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,26 +435,27 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" id="YCg-OO-5VR"/>
+                    <navigationItem key="navigationItem" id="y54-bh-OMC"/>
                     <connections>
-                        <outlet property="tableView" destination="V8Z-JC-u54" id="Z3F-XT-Kdw"/>
+                        <outlet property="tableView" destination="V8Z-JC-u54" id="rwk-I0-fuO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgO-0k-1bI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="232.82442748091603" y="1522.5352112676057"/>
+            <point key="canvasLocation" x="233" y="1523"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Home View-->
         <scene sceneID="NSI-2F-Egc">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarVC" id="cSM-ir-zxJ" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarVC" id="cSM-ir-zxJ" customClass="HomeView" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8jr-jH-45i">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="3hv-sV-PGk" kind="relationship" relationship="viewControllers" id="QiS-Pt-M7Q"/>
-                        <segue destination="clF-tb-LVn" kind="relationship" relationship="viewControllers" id="8iu-5s-oeu"/>
+                        <segue destination="3hv-sV-PGk" kind="relationship" relationship="viewControllers" id="MXR-A9-WHm"/>
+                        <segue destination="clF-tb-LVn" kind="relationship" relationship="viewControllers" id="Dgq-Ob-Dy4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7b-hL-7ih" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

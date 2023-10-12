@@ -2,13 +2,12 @@
 //  FeedTableViewCell.swift
 //  StargramClone
 //
-//  Created by 이승진 on 2023/10/08.
+//  Created by 이승진 on 2023/10/10.
 //
 
 import UIKit
 
 class FeedTableViewCell: UITableViewCell {
-    
     
     @IBOutlet weak var imageViewUserProfile: UIImageView!
     @IBOutlet weak var labelUserName: UILabel!
@@ -22,9 +21,9 @@ class FeedTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        imageViewUserProfile.layer.cornerRadius = 22.5
+        imageViewUserProfile.layer.cornerRadius = 12.5
         imageViewUserProfile.clipsToBounds = true
-        imageViewMyProfile.layer.cornerRadius = 22.5
+        imageViewMyProfile.layer.cornerRadius = 12.5
         imageViewMyProfile.clipsToBounds = true
         
         let fontSize = UIFont.boldSystemFont(ofSize: 9)
@@ -37,10 +36,10 @@ class FeedTableViewCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-
+        // Configure the view for the selected state
     }
     
-    @IBAction func actionIsHeart(_ sender: UIButton) {
+    @IBAction func actionIsHeart(_ sender: Any) {
         if buttonIsHeart.isSelected {
             buttonIsHeart.isSelected = false
         } else {
@@ -48,15 +47,13 @@ class FeedTableViewCell: UITableViewCell {
         }
     }
     
-    
-    @IBAction func actionBookMark(_ sender: UIButton) {
+    @IBAction func actionIsBookMark(_ sender: Any) {
         if buttonIsBookMark.isSelected {
             buttonIsBookMark.isSelected = false
         } else {
             buttonIsBookMark.isSelected = true
         }
     }
-    
     
     
 }

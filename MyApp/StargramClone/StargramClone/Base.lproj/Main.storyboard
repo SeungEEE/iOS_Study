@@ -339,9 +339,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chX-jL-tz3">
-                                <rect key="frame" x="161" y="374" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="chX-jL-tz3">
+                                <rect key="frame" x="158.66666666666666" y="411" width="76" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -349,6 +348,10 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2yO-hq-Xjm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="chX-jL-tz3" firstAttribute="centerX" secondItem="rQc-dC-kCd" secondAttribute="centerX" id="DVa-29-tFw"/>
+                            <constraint firstItem="chX-jL-tz3" firstAttribute="centerY" secondItem="rQc-dC-kCd" secondAttribute="centerY" id="NvC-td-CF9"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="xxt-I3-0m0"/>
                     <navigationItem key="navigationItem" id="AC2-Kz-WAk"/>

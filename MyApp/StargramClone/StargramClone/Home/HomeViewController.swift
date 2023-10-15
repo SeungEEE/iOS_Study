@@ -56,7 +56,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let tableViewCell = cell as? StoryTableViewCell else {
             return
         }

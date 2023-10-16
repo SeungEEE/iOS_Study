@@ -19,7 +19,54 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gJc-pT-1eD">
                         <rect key="frame" x="0.0" y="0.0" width="167" height="162"/>
-                        <color key="backgroundColor" systemColor="systemBrownColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pN4-hT-1xu">
+                                <rect key="frame" x="59.666666666666657" y="0.0" width="48" height="48"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0x-hU-RQQ">
+                                        <rect key="frame" x="0.3333333333333357" y="0.66666666666666785" width="47" height="47"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3yn-KK-2aZ">
+                                                <rect key="frame" x="1" y="3" width="45" height="41.666666666666671"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="LlT-GC-Hlx"/>
+                                                    <constraint firstAttribute="width" constant="45" id="hRG-c1-wPA"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="3yn-KK-2aZ" firstAttribute="centerY" secondItem="q0x-hU-RQQ" secondAttribute="centerY" id="5vX-XJ-hnc"/>
+                                            <constraint firstAttribute="width" constant="47" id="HEq-o8-s1K"/>
+                                            <constraint firstItem="3yn-KK-2aZ" firstAttribute="centerX" secondItem="q0x-hU-RQQ" secondAttribute="centerX" id="ROe-qq-7mm"/>
+                                            <constraint firstAttribute="height" constant="47" id="WgE-KB-Oyg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="37N-z7-yCA"/>
+                                    <constraint firstAttribute="width" constant="48" id="BxI-TX-PiA"/>
+                                    <constraint firstItem="q0x-hU-RQQ" firstAttribute="centerX" secondItem="pN4-hT-1xu" secondAttribute="centerX" id="C25-fj-z41"/>
+                                    <constraint firstItem="q0x-hU-RQQ" firstAttribute="centerY" secondItem="pN4-hT-1xu" secondAttribute="centerY" id="yB8-UL-5ns"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seung" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0H-8H-JVl">
+                                <rect key="frame" x="68.666666666666671" y="50" width="29.666666666666671" height="11"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="9"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pN4-hT-1xu" firstAttribute="top" secondItem="gJc-pT-1eD" secondAttribute="top" id="7ur-SC-mbW"/>
+                            <constraint firstItem="W0H-8H-JVl" firstAttribute="centerX" secondItem="3yn-KK-2aZ" secondAttribute="centerX" id="K0T-4R-xhA"/>
+                            <constraint firstItem="W0H-8H-JVl" firstAttribute="top" secondItem="pN4-hT-1xu" secondAttribute="bottom" constant="2" id="YtN-Xc-Zwr"/>
+                            <constraint firstItem="pN4-hT-1xu" firstAttribute="centerX" secondItem="gJc-pT-1eD" secondAttribute="centerX" id="xlq-ll-NEm"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
@@ -31,12 +78,21 @@
                 <constraint firstItem="gJc-pT-1eD" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UJK-kn-IOr"/>
             </constraints>
             <size key="customSize" width="167" height="162"/>
+            <connections>
+                <outlet property="imageViewUserProfile" destination="3yn-KK-2aZ" id="BYM-9R-Awk"/>
+                <outlet property="viewImageViewBackground" destination="pN4-hT-1xu" id="pMG-Ep-gFb"/>
+                <outlet property="viewUserProfileBackground" destination="q0x-hU-RQQ" id="sh3-Wr-KoM"/>
+            </connections>
             <point key="canvasLocation" x="116.79389312977099" y="58.450704225352112"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

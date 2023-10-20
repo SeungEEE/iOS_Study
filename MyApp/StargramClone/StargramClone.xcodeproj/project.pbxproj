@@ -29,9 +29,11 @@
 		5CC319762AD7B55E008A5F62 /* StoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC319742AD7B55E008A5F62 /* StoryTableViewCell.xib */; };
 		5CC319792AD7B89D008A5F62 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC319772AD7B89D008A5F62 /* StoryCollectionViewCell.swift */; };
 		5CC3197A2AD7B89D008A5F62 /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC319782AD7B89D008A5F62 /* StoryCollectionViewCell.xib */; };
+		EA43D9BE5088B2E1109F4609 /* Pods_StargramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279760FD54AB3185FF64586F /* Pods_StargramClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		279760FD54AB3185FF64586F /* Pods_StargramClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StargramClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C11A4892ACEB95B0059E5A2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		5C11A48B2ACEBBD60059E5A2 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		5C1382A92ADD05DB0093EB5F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +58,8 @@
 		5CC319742AD7B55E008A5F62 /* StoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryTableViewCell.xib; sourceTree = "<group>"; };
 		5CC319772AD7B89D008A5F62 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		5CC319782AD7B89D008A5F62 /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		9D81AF48D1AE545FA35F7FBE /* Pods-StargramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StargramClone.debug.xcconfig"; path = "Target Support Files/Pods-StargramClone/Pods-StargramClone.debug.xcconfig"; sourceTree = "<group>"; };
+		E44CA64874CFDB4435276833 /* Pods-StargramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StargramClone.release.xcconfig"; path = "Target Support Files/Pods-StargramClone/Pods-StargramClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA43D9BE5088B2E1109F4609 /* Pods_StargramClone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +137,8 @@
 			children = (
 				5C8EE0772ACD3B4D007AA3C1 /* StargramClone */,
 				5C8EE0762ACD3B4D007AA3C1 /* Products */,
+				ED1C3D61DF064C8F5586BF57 /* Pods */,
+				7E116C962ACEE5DF1092D518 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +170,24 @@
 			path = StargramClone;
 			sourceTree = "<group>";
 		};
+		7E116C962ACEE5DF1092D518 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				279760FD54AB3185FF64586F /* Pods_StargramClone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED1C3D61DF064C8F5586BF57 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D81AF48D1AE545FA35F7FBE /* Pods-StargramClone.debug.xcconfig */,
+				E44CA64874CFDB4435276833 /* Pods-StargramClone.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,9 +195,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5C8EE0892ACD3B4D007AA3C1 /* Build configuration list for PBXNativeTarget "StargramClone" */;
 			buildPhases = (
+				8240977CFF4D5166B7C8EFBE /* [CP] Check Pods Manifest.lock */,
 				5C8EE0712ACD3B4D007AA3C1 /* Sources */,
 				5C8EE0722ACD3B4D007AA3C1 /* Frameworks */,
 				5C8EE0732ACD3B4D007AA3C1 /* Resources */,
+				8FA9A7DEB8C427EDB8379E60 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,6 +260,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8240977CFF4D5166B7C8EFBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StargramClone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8FA9A7DEB8C427EDB8379E60 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StargramClone/Pods-StargramClone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StargramClone/Pods-StargramClone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StargramClone/Pods-StargramClone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5C8EE0712ACD3B4D007AA3C1 /* Sources */ = {
@@ -394,6 +463,7 @@
 		};
 		5C8EE08A2ACD3B4D007AA3C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D81AF48D1AE545FA35F7FBE /* Pods-StargramClone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -421,6 +491,7 @@
 		};
 		5C8EE08B2ACD3B4D007AA3C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E44CA64874CFDB4435276833 /* Pods-StargramClone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

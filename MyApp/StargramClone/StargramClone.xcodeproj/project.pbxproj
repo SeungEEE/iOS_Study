@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C0C0BD52AE24D6D00EAD90B /* FeedAPIInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0C0BD42AE24D6D00EAD90B /* FeedAPIInput.swift */; };
+		5C0C0BD72AE24DC600EAD90B /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0C0BD62AE24DC600EAD90B /* FeedModel.swift */; };
+		5C0C0BD92AE24E0600EAD90B /* FeedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C0C0BD82AE24E0600EAD90B /* FeedDataManager.swift */; };
 		5C11A48A2ACEB95B0059E5A2 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11A4892ACEB95B0059E5A2 /* UIView+Extension.swift */; };
 		5C11A48C2ACEBBD60059E5A2 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C11A48B2ACEBBD60059E5A2 /* UIViewController+Extension.swift */; };
 		5C1382AA2ADD05DB0093EB5F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1382A92ADD05DB0093EB5F /* ProfileViewController.swift */; };
@@ -29,11 +32,17 @@
 		5CC319762AD7B55E008A5F62 /* StoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC319742AD7B55E008A5F62 /* StoryTableViewCell.xib */; };
 		5CC319792AD7B89D008A5F62 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC319772AD7B89D008A5F62 /* StoryCollectionViewCell.swift */; };
 		5CC3197A2AD7B89D008A5F62 /* StoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CC319782AD7B89D008A5F62 /* StoryCollectionViewCell.xib */; };
+		5CC8D8052AE25E5400342B15 /* FeedUploadInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8D8042AE25E5400342B15 /* FeedUploadInput.swift */; };
+		5CC8D8072AE25E9600342B15 /* FeedUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8D8062AE25E9600342B15 /* FeedUploadModel.swift */; };
+		5CC8D8092AE25F0600342B15 /* FeedUploadDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8D8082AE25F0600342B15 /* FeedUploadDataManager.swift */; };
 		EA43D9BE5088B2E1109F4609 /* Pods_StargramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279760FD54AB3185FF64586F /* Pods_StargramClone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		279760FD54AB3185FF64586F /* Pods_StargramClone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StargramClone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C0C0BD42AE24D6D00EAD90B /* FeedAPIInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAPIInput.swift; sourceTree = "<group>"; };
+		5C0C0BD62AE24DC600EAD90B /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
+		5C0C0BD82AE24E0600EAD90B /* FeedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedDataManager.swift; sourceTree = "<group>"; };
 		5C11A4892ACEB95B0059E5A2 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		5C11A48B2ACEBBD60059E5A2 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		5C1382A92ADD05DB0093EB5F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +67,9 @@
 		5CC319742AD7B55E008A5F62 /* StoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryTableViewCell.xib; sourceTree = "<group>"; };
 		5CC319772AD7B89D008A5F62 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		5CC319782AD7B89D008A5F62 /* StoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		5CC8D8042AE25E5400342B15 /* FeedUploadInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUploadInput.swift; sourceTree = "<group>"; };
+		5CC8D8062AE25E9600342B15 /* FeedUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUploadModel.swift; sourceTree = "<group>"; };
+		5CC8D8082AE25F0600342B15 /* FeedUploadDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUploadDataManager.swift; sourceTree = "<group>"; };
 		9D81AF48D1AE545FA35F7FBE /* Pods-StargramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StargramClone.debug.xcconfig"; path = "Target Support Files/Pods-StargramClone/Pods-StargramClone.debug.xcconfig"; sourceTree = "<group>"; };
 		E44CA64874CFDB4435276833 /* Pods-StargramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StargramClone.release.xcconfig"; path = "Target Support Files/Pods-StargramClone/Pods-StargramClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +86,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C0C0BD32AE24D3F00EAD90B /* FeedDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				5C0C0BD42AE24D6D00EAD90B /* FeedAPIInput.swift */,
+				5C0C0BD62AE24DC600EAD90B /* FeedModel.swift */,
+				5C0C0BD82AE24E0600EAD90B /* FeedDataManager.swift */,
+			);
+			path = FeedDataManager;
+			sourceTree = "<group>";
+		};
 		5C1382A82ADD05AC0093EB5F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +135,8 @@
 		5C3F12A02AD29AAA0067C22A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				5CC8D8032AE25E2D00342B15 /* FeedUploadDataManager */,
+				5C0C0BD32AE24D3F00EAD90B /* FeedDataManager */,
 				5CA7E37E2AD53D0700AEAC6A /* HomeViewController.swift */,
 				5C3F12A32AD29CF10067C22A /*  Cell */,
 			);
@@ -170,6 +194,16 @@
 			path = StargramClone;
 			sourceTree = "<group>";
 		};
+		5CC8D8032AE25E2D00342B15 /* FeedUploadDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				5CC8D8042AE25E5400342B15 /* FeedUploadInput.swift */,
+				5CC8D8062AE25E9600342B15 /* FeedUploadModel.swift */,
+				5CC8D8082AE25F0600342B15 /* FeedUploadDataManager.swift */,
+			);
+			path = FeedUploadDataManager;
+			sourceTree = "<group>";
+		};
 		7E116C962ACEE5DF1092D518 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +218,6 @@
 				9D81AF48D1AE545FA35F7FBE /* Pods-StargramClone.debug.xcconfig */,
 				E44CA64874CFDB4435276833 /* Pods-StargramClone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -310,18 +343,24 @@
 			files = (
 				5C11A48C2ACEBBD60059E5A2 /* UIViewController+Extension.swift in Sources */,
 				5C8EE08D2ACD42F7007AA3C1 /* LoginViewController.swift in Sources */,
+				5C0C0BD52AE24D6D00EAD90B /* FeedAPIInput.swift in Sources */,
 				5CC319792AD7B89D008A5F62 /* StoryCollectionViewCell.swift in Sources */,
 				5C8EE0792ACD3B4D007AA3C1 /* AppDelegate.swift in Sources */,
+				5CC8D8052AE25E5400342B15 /* FeedUploadInput.swift in Sources */,
 				5CA7E37F2AD53D0700AEAC6A /* HomeViewController.swift in Sources */,
 				5C8EE07B2ACD3B4D007AA3C1 /* SceneDelegate.swift in Sources */,
 				5C1382AA2ADD05DB0093EB5F /* ProfileViewController.swift in Sources */,
 				5C11A48A2ACEB95B0059E5A2 /* UIView+Extension.swift in Sources */,
 				5C1382AE2ADD08070093EB5F /* ProfileCollectionViewCell.swift in Sources */,
+				5CC8D8072AE25E9600342B15 /* FeedUploadModel.swift in Sources */,
+				5CC8D8092AE25F0600342B15 /* FeedUploadDataManager.swift in Sources */,
 				5CA129BC2AD1A13E00F380C0 /* UserInfo.swift in Sources */,
+				5C0C0BD92AE24E0600EAD90B /* FeedDataManager.swift in Sources */,
 				5CA7E3822AD53FA000AEAC6A /* FeedTableViewCell.swift in Sources */,
 				5C8EE08F2ACD45D6007AA3C1 /* RegisterViewController.swift in Sources */,
 				5C1382B42ADD150E0093EB5F /* PostCollectionViewCell.swift in Sources */,
 				5CC319752AD7B55E008A5F62 /* StoryTableViewCell.swift in Sources */,
+				5C0C0BD72AE24DC600EAD90B /* FeedModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

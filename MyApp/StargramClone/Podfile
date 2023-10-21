@@ -7,4 +7,6 @@ target 'StargramClone' do
 
   # Pods for StargramClone
   pod 'Alamofire'
+  pod 'Kingfisher', '~> 7.0'
+
 end

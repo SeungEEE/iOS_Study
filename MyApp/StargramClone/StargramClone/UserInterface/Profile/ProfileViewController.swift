@@ -12,12 +12,17 @@ class ProfileViewController: UIViewController {
     //MARK: - Properties
     @IBOutlet weak var profileCollectionView: UICollectionView!
     
+    var userPosts: [GetUserPost]? {
+        didSet { self.profileCollectionView.reloadData() }
+    }
 
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCollectionView()
+        
+        setupData()
     }
     
     //MARK: - Actions
@@ -38,9 +43,13 @@ class ProfileViewController: UIViewController {
             UINib(nibName: "PostCollectionViewCell", bundle: nil),
             forCellWithReuseIdentifier: PostCollectionViewCell.identifier)
     }
+    
+    private func setupData() {
+        UserFeedDataManager().getUserFeed(self)
+    }
 }
 
-//MARK: -ProfileViewController
+//MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     // Section의 개수
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -54,7 +63,7 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
         case 0:
             return 1
         default: // 1
-            return 24
+            return userPosts?.count ?? 0
         }
     }
     
@@ -72,7 +81,13 @@ extension ProfileViewController: UICollectionViewDelegate, UICollectionViewDataS
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PostCollectionViewCell.identifier, for: indexPath) as? PostCollectionViewCell else {
                 fatalError("셀 타입 캐스팅 실패...")
             }
-            cell.setupData() // <- 데이터 전달
+            let itemIndex = indexPath.item
+            
+            if let cellData = self.userPosts {
+                // 데이터가 있는 경우, cell에 데이터 전달
+                cell.setupData(cellData[itemIndex].postImgUrl) // <- 데이터 전달
+            }
+            
             return cell
         }
     }
@@ -109,5 +124,12 @@ extension ProfileViewController: UICollectionViewDelegateFlowLayout {
         default:
             return 1
         }
+    }
+}
+
+// MARK: - API 통신 메소드
+extension ProfileViewController {
+    func successFeedAPI(_ result: UserFeedModel) {
+        self.userPosts = result.result.getUserPosts
     }
 }

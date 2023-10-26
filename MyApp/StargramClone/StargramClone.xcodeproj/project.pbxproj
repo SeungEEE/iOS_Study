@@ -35,6 +35,8 @@
 		5CC8D8052AE25E5400342B15 /* FeedUploadInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8D8042AE25E5400342B15 /* FeedUploadInput.swift */; };
 		5CC8D8072AE25E9600342B15 /* FeedUploadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8D8062AE25E9600342B15 /* FeedUploadModel.swift */; };
 		5CC8D8092AE25F0600342B15 /* FeedUploadDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC8D8082AE25F0600342B15 /* FeedUploadDataManager.swift */; };
+		5CF43D092AEA3578004034AF /* UserFeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF43D082AEA3578004034AF /* UserFeedModel.swift */; };
+		5CF43D0B2AEA3C3F004034AF /* UserFeedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF43D0A2AEA3C3F004034AF /* UserFeedDataManager.swift */; };
 		EA43D9BE5088B2E1109F4609 /* Pods_StargramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279760FD54AB3185FF64586F /* Pods_StargramClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		5CC8D8042AE25E5400342B15 /* FeedUploadInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUploadInput.swift; sourceTree = "<group>"; };
 		5CC8D8062AE25E9600342B15 /* FeedUploadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUploadModel.swift; sourceTree = "<group>"; };
 		5CC8D8082AE25F0600342B15 /* FeedUploadDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUploadDataManager.swift; sourceTree = "<group>"; };
+		5CF43D082AEA3578004034AF /* UserFeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedModel.swift; sourceTree = "<group>"; };
+		5CF43D0A2AEA3C3F004034AF /* UserFeedDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFeedDataManager.swift; sourceTree = "<group>"; };
 		9D81AF48D1AE545FA35F7FBE /* Pods-StargramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StargramClone.debug.xcconfig"; path = "Target Support Files/Pods-StargramClone/Pods-StargramClone.debug.xcconfig"; sourceTree = "<group>"; };
 		E44CA64874CFDB4435276833 /* Pods-StargramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StargramClone.release.xcconfig"; path = "Target Support Files/Pods-StargramClone/Pods-StargramClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -99,6 +103,7 @@
 		5C1382A82ADD05AC0093EB5F /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				5CF43D072AEA3540004034AF /* UserFeedDataManager */,
 				5C1382AB2ADD07E10093EB5F /* Cell */,
 				5C1382A92ADD05DB0093EB5F /* ProfileViewController.swift */,
 			);
@@ -177,16 +182,12 @@
 		5C8EE0772ACD3B4D007AA3C1 /* StargramClone */ = {
 			isa = PBXGroup;
 			children = (
-				5C1382A82ADD05AC0093EB5F /* Profile */,
-				5C3F12A02AD29AAA0067C22A /* Home */,
-				5C8EE0782ACD3B4D007AA3C1 /* AppDelegate.swift */,
-				5C8EE07A2ACD3B4D007AA3C1 /* SceneDelegate.swift */,
+				5CF43D042AEA3166004034AF /* APP */,
+				5CF43D062AEA31BE004034AF /* UserInterface */,
 				5C8EE07E2ACD3B4D007AA3C1 /* Main.storyboard */,
 				5C11A48B2ACEBBD60059E5A2 /* UIViewController+Extension.swift */,
 				5CA129BB2AD1A13E00F380C0 /* UserInfo.swift */,
 				5C11A4892ACEB95B0059E5A2 /* UIView+Extension.swift */,
-				5C8EE08C2ACD42F7007AA3C1 /* LoginViewController.swift */,
-				5C8EE08E2ACD45D6007AA3C1 /* RegisterViewController.swift */,
 				5C8EE0812ACD3B4D007AA3C1 /* Assets.xcassets */,
 				5C8EE0832ACD3B4D007AA3C1 /* LaunchScreen.storyboard */,
 				5C8EE0862ACD3B4D007AA3C1 /* Info.plist */,
@@ -202,6 +203,43 @@
 				5CC8D8082AE25F0600342B15 /* FeedUploadDataManager.swift */,
 			);
 			path = FeedUploadDataManager;
+			sourceTree = "<group>";
+		};
+		5CF43D042AEA3166004034AF /* APP */ = {
+			isa = PBXGroup;
+			children = (
+				5C8EE0782ACD3B4D007AA3C1 /* AppDelegate.swift */,
+				5C8EE07A2ACD3B4D007AA3C1 /* SceneDelegate.swift */,
+			);
+			path = APP;
+			sourceTree = "<group>";
+		};
+		5CF43D052AEA3183004034AF /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				5C8EE08C2ACD42F7007AA3C1 /* LoginViewController.swift */,
+				5C8EE08E2ACD45D6007AA3C1 /* RegisterViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		5CF43D062AEA31BE004034AF /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				5C1382A82ADD05AC0093EB5F /* Profile */,
+				5C3F12A02AD29AAA0067C22A /* Home */,
+				5CF43D052AEA3183004034AF /* Authentication */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		5CF43D072AEA3540004034AF /* UserFeedDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				5CF43D082AEA3578004034AF /* UserFeedModel.swift */,
+				5CF43D0A2AEA3C3F004034AF /* UserFeedDataManager.swift */,
+			);
+			path = UserFeedDataManager;
 			sourceTree = "<group>";
 		};
 		7E116C962ACEE5DF1092D518 /* Frameworks */ = {
@@ -349,6 +387,7 @@
 				5CC8D8052AE25E5400342B15 /* FeedUploadInput.swift in Sources */,
 				5CA7E37F2AD53D0700AEAC6A /* HomeViewController.swift in Sources */,
 				5C8EE07B2ACD3B4D007AA3C1 /* SceneDelegate.swift in Sources */,
+				5CF43D0B2AEA3C3F004034AF /* UserFeedDataManager.swift in Sources */,
 				5C1382AA2ADD05DB0093EB5F /* ProfileViewController.swift in Sources */,
 				5C11A48A2ACEB95B0059E5A2 /* UIView+Extension.swift in Sources */,
 				5C1382AE2ADD08070093EB5F /* ProfileCollectionViewCell.swift in Sources */,
@@ -359,6 +398,7 @@
 				5CA7E3822AD53FA000AEAC6A /* FeedTableViewCell.swift in Sources */,
 				5C8EE08F2ACD45D6007AA3C1 /* RegisterViewController.swift in Sources */,
 				5C1382B42ADD150E0093EB5F /* PostCollectionViewCell.swift in Sources */,
+				5CF43D092AEA3578004034AF /* UserFeedModel.swift in Sources */,
 				5CC319752AD7B55E008A5F62 /* StoryTableViewCell.swift in Sources */,
 				5C0C0BD72AE24DC600EAD90B /* FeedModel.swift in Sources */,
 			);

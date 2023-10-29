@@ -41,6 +41,8 @@
 		5CF43D122AEB9C8B004034AF /* ReelsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF43D112AEB9C8B004034AF /* ReelsViewController.swift */; };
 		5CF43D152AEB9D16004034AF /* ReelsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF43D132AEB9D16004034AF /* ReelsCollectionViewCell.swift */; };
 		5CF43D162AEB9D16004034AF /* ReelsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CF43D142AEB9D16004034AF /* ReelsCollectionViewCell.xib */; };
+		5CF43D1A2AEE1ACB004034AF /* ReelsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF43D192AEE1ACB004034AF /* ReelsCell.swift */; };
+		5CF43D1C2AEE1D46004034AF /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF43D1B2AEE1D46004034AF /* VideoPlayerView.swift */; };
 		EA43D9BE5088B2E1109F4609 /* Pods_StargramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279760FD54AB3185FF64586F /* Pods_StargramClone.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +86,8 @@
 		5CF43D142AEB9D16004034AF /* ReelsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReelsCollectionViewCell.xib; sourceTree = "<group>"; };
 		5CF43D172AEBA12A004034AF /* dummyVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummyVideo.mp4; sourceTree = "<group>"; };
 		5CF43D182AEBA135004034AF /* dummyVideo02.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = dummyVideo02.mp4; sourceTree = "<group>"; };
+		5CF43D192AEE1ACB004034AF /* ReelsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsCell.swift; sourceTree = "<group>"; };
+		5CF43D1B2AEE1D46004034AF /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		9D81AF48D1AE545FA35F7FBE /* Pods-StargramClone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StargramClone.debug.xcconfig"; path = "Target Support Files/Pods-StargramClone/Pods-StargramClone.debug.xcconfig"; sourceTree = "<group>"; };
 		E44CA64874CFDB4435276833 /* Pods-StargramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StargramClone.release.xcconfig"; path = "Target Support Files/Pods-StargramClone/Pods-StargramClone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +201,8 @@
 				5C8EE07E2ACD3B4D007AA3C1 /* Main.storyboard */,
 				5CF43D112AEB9C8B004034AF /* ReelsViewController.swift */,
 				5CF43D132AEB9D16004034AF /* ReelsCollectionViewCell.swift */,
+				5CF43D192AEE1ACB004034AF /* ReelsCell.swift */,
+				5CF43D1B2AEE1D46004034AF /* VideoPlayerView.swift */,
 				5CF43D142AEB9D16004034AF /* ReelsCollectionViewCell.xib */,
 				5C11A48B2ACEBBD60059E5A2 /* UIViewController+Extension.swift */,
 				5CA129BB2AD1A13E00F380C0 /* UserInfo.swift */,
@@ -425,6 +431,7 @@
 				5C1382AA2ADD05DB0093EB5F /* ProfileViewController.swift in Sources */,
 				5C11A48A2ACEB95B0059E5A2 /* UIView+Extension.swift in Sources */,
 				5C1382AE2ADD08070093EB5F /* ProfileCollectionViewCell.swift in Sources */,
+				5CF43D1A2AEE1ACB004034AF /* ReelsCell.swift in Sources */,
 				5CC8D8072AE25E9600342B15 /* FeedUploadModel.swift in Sources */,
 				5CC8D8092AE25F0600342B15 /* FeedUploadDataManager.swift in Sources */,
 				5CA129BC2AD1A13E00F380C0 /* UserInfo.swift in Sources */,
@@ -434,6 +441,7 @@
 				5CF43D152AEB9D16004034AF /* ReelsCollectionViewCell.swift in Sources */,
 				5C1382B42ADD150E0093EB5F /* PostCollectionViewCell.swift in Sources */,
 				5CF43D092AEA3578004034AF /* UserFeedModel.swift in Sources */,
+				5CF43D1C2AEE1D46004034AF /* VideoPlayerView.swift in Sources */,
 				5CC319752AD7B55E008A5F62 /* StoryTableViewCell.swift in Sources */,
 				5CF43D122AEB9C8B004034AF /* ReelsViewController.swift in Sources */,
 				5C0C0BD72AE24DC600EAD90B /* FeedModel.swift in Sources */,

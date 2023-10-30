@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cSM-ir-zxJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7DZ-kh-kjE">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -538,7 +538,7 @@
                             <constraint firstItem="6Iq-jV-R8j" firstAttribute="top" secondItem="0QY-sT-yWN" secondAttribute="top" id="w7I-fz-qa9"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="릴스" id="TWG-fW-vnW"/>
+                    <tabBarItem key="tabBarItem" title="릴스" image="video.circle" catalog="system" id="TWG-fW-vnW"/>
                     <connections>
                         <outlet property="collectionView" destination="6Iq-jV-R8j" id="ZtK-qw-oMi"/>
                     </connections>
@@ -578,6 +578,7 @@
         <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
         <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="plus.app" catalog="system" width="128" height="114"/>
+        <image name="video.circle" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

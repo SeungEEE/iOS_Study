@@ -32,7 +32,7 @@
             <connections>
                 <outlet property="postImageView" destination="GSp-m7-sCI" id="684-qV-SHH"/>
             </connections>
-            <point key="canvasLocation" x="139" y="20"/>
+            <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
         </collectionViewCell>
     </objects>
 </document>

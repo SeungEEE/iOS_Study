@@ -243,7 +243,9 @@ final class ViewController: UIViewController { // 클래스메서드는 구조�
     }
 }
 
+//MARK: - extenstion
 extension ViewController: UITextFieldDelegate { // 프로토콜 채택
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == emailTextField {
             emailTextFieldView.backgroundColor = #colorLiteral(red: 0.3333333433, green: 0.3333333433, blue: 0.3333333433, alpha: 1)

@@ -84,6 +84,48 @@
             </objects>
             <point key="canvasLocation" x="102" y="4"/>
         </scene>
+        <!--Second View Controller-->
+        <scene sceneID="26X-go-nF1">
+            <objects>
+                <viewController storyboardIdentifier="secondVC" id="y0S-OP-BcM" customClass="SecondViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Os6-vy-KZj">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRR-jr-5eH">
+                                <rect key="frame" x="160" y="718" width="73" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="y0S-OP-BcM" eventType="touchUpInside" id="hdR-Zt-Qad"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SecondViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qc-w1-ijC">
+                                <rect key="frame" x="90.666666666666686" y="414" width="212" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kbf-eS-836"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1qc-w1-ijC" firstAttribute="centerX" secondItem="Os6-vy-KZj" secondAttribute="centerX" id="2pr-Xx-gO3"/>
+                            <constraint firstItem="1qc-w1-ijC" firstAttribute="centerY" secondItem="Os6-vy-KZj" secondAttribute="centerY" id="BD3-28-xEn"/>
+                            <constraint firstItem="Kbf-eS-836" firstAttribute="trailing" secondItem="wRR-jr-5eH" secondAttribute="trailing" constant="160" id="Fnl-ig-g1U"/>
+                            <constraint firstItem="wRR-jr-5eH" firstAttribute="top" secondItem="1qc-w1-ijC" secondAttribute="bottom" constant="280" id="JXM-2N-IWc"/>
+                            <constraint firstItem="Kbf-eS-836" firstAttribute="bottom" secondItem="wRR-jr-5eH" secondAttribute="bottom" constant="60" id="aNS-y2-1sO"/>
+                            <constraint firstItem="wRR-jr-5eH" firstAttribute="leading" secondItem="Kbf-eS-836" secondAttribute="leading" constant="160" id="yBR-Ul-qyz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="1qc-w1-ijC" id="qVC-82-3v4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vSl-b6-Ngm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1290.8396946564885" y="-239.43661971830988"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

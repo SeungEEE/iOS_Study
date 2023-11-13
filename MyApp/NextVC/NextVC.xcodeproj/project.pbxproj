@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C3982172B01DE690075ED3D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3982162B01DE690075ED3D /* SecondViewController.swift */; };
 		5C440B452AFA1C6A000B8A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C440B442AFA1C6A000B8A91 /* AppDelegate.swift */; };
 		5C440B472AFA1C6A000B8A91 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C440B462AFA1C6A000B8A91 /* SceneDelegate.swift */; };
 		5C440B492AFA1C6A000B8A91 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C440B482AFA1C6A000B8A91 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C3982162B01DE690075ED3D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		5C440B412AFA1C6A000B8A91 /* NextVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C440B442AFA1C6A000B8A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C440B462AFA1C6A000B8A91 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				5C440B462AFA1C6A000B8A91 /* SceneDelegate.swift */,
 				5C440B482AFA1C6A000B8A91 /* ViewController.swift */,
 				5C440B582AFA210F000B8A91 /* FirstViewController.swift */,
+				5C3982162B01DE690075ED3D /* SecondViewController.swift */,
 				5C440B4A2AFA1C6A000B8A91 /* Main.storyboard */,
 				5C440B4D2AFA1C6B000B8A91 /* Assets.xcassets */,
 				5C440B4F2AFA1C6B000B8A91 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				5C440B492AFA1C6A000B8A91 /* ViewController.swift in Sources */,
 				5C440B452AFA1C6A000B8A91 /* AppDelegate.swift in Sources */,
 				5C440B472AFA1C6A000B8A91 /* SceneDelegate.swift in Sources */,
+				5C3982172B01DE690075ED3D /* SecondViewController.swift in Sources */,
 				5C440B592AFA210F000B8A91 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

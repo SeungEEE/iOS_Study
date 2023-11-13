@@ -27,17 +27,18 @@ class ViewController: UIViewController {
     
     // 2) 코드로 스토리보드 객체를 생성해서, 화면 이동
     @IBAction func storyboardWithCodeButtonTapped(_ sender: UIButton) {
+        guard let secondVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? SecondViewController else { return }
         
-        
-        
+        secondVC.someString = "My name is"
+//        secondVC.mainLabel.text = "nil"
+        secondVC.modalPresentationStyle = .fullScreen
+        present(secondVC, animated: true, completion: nil)
     }
+    
     // 3) 스토리보드에서의 화면 이동(간접 세그웨이)
     @IBAction func storyboardWithSegueButtonTapped(_ sender: UIButton) {
         
         
-        
     }
-    
-
 }
 

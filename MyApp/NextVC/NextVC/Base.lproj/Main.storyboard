@@ -79,6 +79,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xA3-U0-Sor" secondAttribute="trailing" constant="15" id="z8c-k0-c8D"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Rzp-GO-ccP" kind="presentation" identifier="toThirdVC" id="Zvg-xE-cfd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -125,6 +128,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vSl-b6-Ngm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1290.8396946564885" y="-239.43661971830988"/>
+        </scene>
+        <!--Third View Controller-->
+        <scene sceneID="tJy-W0-R9U">
+            <objects>
+                <viewController storyboardIdentifier="thirdVC" id="Rzp-GO-ccP" customClass="ThirdViewController" customModule="NextVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I6x-6Z-Zl5">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ThirdViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isa-y8-YwH">
+                                <rect key="frame" x="101.33333333333333" y="409" width="190.33333333333337" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qg-bm-O6M">
+                                <rect key="frame" x="160" y="713" width="73" height="69"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="y0S-OP-BcM" eventType="touchUpInside" id="7qn-IY-RQ7"/>
+                                    <action selector="backButtonTapped:" destination="Rzp-GO-ccP" eventType="touchUpInside" id="Pmg-Lc-AEK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="W4U-Wl-aSb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6qg-bm-O6M" firstAttribute="leading" secondItem="W4U-Wl-aSb" secondAttribute="leading" constant="160" id="2Cj-VT-KwG"/>
+                            <constraint firstItem="isa-y8-YwH" firstAttribute="centerX" secondItem="I6x-6Z-Zl5" secondAttribute="centerX" id="5Ak-SH-1O9"/>
+                            <constraint firstItem="6qg-bm-O6M" firstAttribute="top" secondItem="isa-y8-YwH" secondAttribute="bottom" constant="280" id="H4j-2O-leo"/>
+                            <constraint firstItem="isa-y8-YwH" firstAttribute="centerY" secondItem="I6x-6Z-Zl5" secondAttribute="centerY" id="MEt-4o-iQk"/>
+                            <constraint firstItem="W4U-Wl-aSb" firstAttribute="bottom" secondItem="6qg-bm-O6M" secondAttribute="bottom" constant="60" id="mrh-X1-WZq"/>
+                            <constraint firstItem="W4U-Wl-aSb" firstAttribute="trailing" secondItem="6qg-bm-O6M" secondAttribute="trailing" constant="160" id="x2P-eI-AQO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="isa-y8-YwH" id="1BM-XE-34Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDa-Th-xvW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1291" y="490"/>
         </scene>
     </scenes>
     <resources>

@@ -47,6 +47,20 @@ class ViewController: UIViewController {
             let thirdVC = segue.destination as! ThirdViewController // 타입 캐스팅 viewController
             thirdVC.someString = "SeungE"
         }
+        
+        if segue.identifier == "toFourthVC" {
+            let fourthVC = segue.destination as! FourthViewController // 타입 캐스팅 viewController
+            fourthVC.someString = "Finally"
+        }
     }
+    
+//    var num = 3
+//    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+//        if num > 5 {
+//            return false
+//        } else {
+//            return true
+//        }
+//    }
 }
 

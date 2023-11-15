@@ -16,6 +16,7 @@
 		5C440B4E2AFA1C6B000B8A91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C440B4D2AFA1C6B000B8A91 /* Assets.xcassets */; };
 		5C440B512AFA1C6B000B8A91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C440B4F2AFA1C6B000B8A91 /* LaunchScreen.storyboard */; };
 		5C440B592AFA210F000B8A91 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C440B582AFA210F000B8A91 /* FirstViewController.swift */; };
+		5C8048162B04992F00D21DBF /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C8048152B04992F00D21DBF /* FourthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5C440B502AFA1C6B000B8A91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C440B522AFA1C6B000B8A91 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C440B582AFA210F000B8A91 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		5C8048152B04992F00D21DBF /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				5C440B582AFA210F000B8A91 /* FirstViewController.swift */,
 				5C3982162B01DE690075ED3D /* SecondViewController.swift */,
 				5C3982182B034ED50075ED3D /* ThirdViewController.swift */,
+				5C8048152B04992F00D21DBF /* FourthViewController.swift */,
 				5C440B4A2AFA1C6A000B8A91 /* Main.storyboard */,
 				5C440B4D2AFA1C6B000B8A91 /* Assets.xcassets */,
 				5C440B4F2AFA1C6B000B8A91 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 				5C440B492AFA1C6A000B8A91 /* ViewController.swift in Sources */,
 				5C440B452AFA1C6A000B8A91 /* AppDelegate.swift in Sources */,
 				5C440B472AFA1C6A000B8A91 /* SceneDelegate.swift in Sources */,
+				5C8048162B04992F00D21DBF /* FourthViewController.swift in Sources */,
 				5C3982172B01DE690075ED3D /* SecondViewController.swift in Sources */,
 				5C3982192B034ED50075ED3D /* ThirdViewController.swift in Sources */,
 				5C440B592AFA210F000B8A91 /* FirstViewController.swift in Sources */,

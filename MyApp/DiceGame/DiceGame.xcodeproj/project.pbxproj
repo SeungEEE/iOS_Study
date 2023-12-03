@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1E40772B1C4379005EFFF0 /* DiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E40762B1C4379005EFFF0 /* DiceManager.swift */; };
 		5CFD2DDF2A9DDF03008A5521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD2DDE2A9DDF03008A5521 /* AppDelegate.swift */; };
 		5CFD2DE12A9DDF03008A5521 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD2DE02A9DDF03008A5521 /* SceneDelegate.swift */; };
 		5CFD2DE32A9DDF03008A5521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD2DE22A9DDF03008A5521 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C1E40762B1C4379005EFFF0 /* DiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceManager.swift; sourceTree = "<group>"; };
 		5CFD2DDB2A9DDF03008A5521 /* DiceGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiceGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFD2DDE2A9DDF03008A5521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CFD2DE02A9DDF03008A5521 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C1E40752B1C4365005EFFF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C1E40762B1C4379005EFFF0 /* DiceManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C1E40782B1C43E7005EFFF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5CFD2DE42A9DDF03008A5521 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5C1E40792B1C43EF005EFFF0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5CFD2DE22A9DDF03008A5521 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		5CFD2DD22A9DDF03008A5521 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +84,9 @@
 			children = (
 				5CFD2DDE2A9DDF03008A5521 /* AppDelegate.swift */,
 				5CFD2DE02A9DDF03008A5521 /* SceneDelegate.swift */,
-				5CFD2DE22A9DDF03008A5521 /* ViewController.swift */,
-				5CFD2DE42A9DDF03008A5521 /* Main.storyboard */,
+				5C1E40752B1C4365005EFFF0 /* Models */,
+				5C1E40782B1C43E7005EFFF0 /* Views */,
+				5C1E40792B1C43EF005EFFF0 /* Controllers */,
 				5CFD2DE72A9DDF04008A5521 /* Assets.xcassets */,
 				5CFD2DE92A9DDF04008A5521 /* LaunchScreen.storyboard */,
 				5CFD2DEC2A9DDF04008A5521 /* Info.plist */,
@@ -138,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1E40772B1C4379005EFFF0 /* DiceManager.swift in Sources */,
 				5CFD2DE32A9DDF03008A5521 /* ViewController.swift in Sources */,
 				5CFD2DDF2A9DDF03008A5521 /* AppDelegate.swift in Sources */,
 				5CFD2DE12A9DDF03008A5521 /* SceneDelegate.swift in Sources */,

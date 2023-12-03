@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C1E407C2B1C4672005EFFF0 /* RPSManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1E407B2B1C4672005EFFF0 /* RPSManager.swift */; };
 		5CFD2DFF2A9F42D5008A5521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD2DFE2A9F42D5008A5521 /* AppDelegate.swift */; };
 		5CFD2E012A9F42D5008A5521 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD2E002A9F42D5008A5521 /* SceneDelegate.swift */; };
 		5CFD2E032A9F42D5008A5521 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CFD2E022A9F42D5008A5521 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C1E407B2B1C4672005EFFF0 /* RPSManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPSManager.swift; sourceTree = "<group>"; };
 		5CFD2DFB2A9F42D5008A5521 /* RPSGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPSGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CFD2DFE2A9F42D5008A5521 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5CFD2E002A9F42D5008A5521 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C1E407A2B1C4660005EFFF0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5CFD2E122A9F4F68008A5521 /* Rps.swift */,
+				5C1E407B2B1C4672005EFFF0 /* RPSManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C1E407D2B1C467D005EFFF0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5CFD2E042A9F42D5008A5521 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5C1E407E2B1C4687005EFFF0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5CFD2E022A9F42D5008A5521 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		5CFD2DF22A9F42D5008A5521 = {
 			isa = PBXGroup;
 			children = (
@@ -60,12 +87,12 @@
 			children = (
 				5CFD2DFE2A9F42D5008A5521 /* AppDelegate.swift */,
 				5CFD2E002A9F42D5008A5521 /* SceneDelegate.swift */,
-				5CFD2E022A9F42D5008A5521 /* ViewController.swift */,
-				5CFD2E042A9F42D5008A5521 /* Main.storyboard */,
+				5C1E407A2B1C4660005EFFF0 /* Models */,
+				5C1E407D2B1C467D005EFFF0 /* Views */,
+				5C1E407E2B1C4687005EFFF0 /* Controllers */,
 				5CFD2E072A9F42D6008A5521 /* Assets.xcassets */,
 				5CFD2E092A9F42D6008A5521 /* LaunchScreen.storyboard */,
 				5CFD2E0C2A9F42D6008A5521 /* Info.plist */,
-				5CFD2E122A9F4F68008A5521 /* Rps.swift */,
 			);
 			path = RPSGame;
 			sourceTree = "<group>";
@@ -145,6 +172,7 @@
 				5CFD2E132A9F4F68008A5521 /* Rps.swift in Sources */,
 				5CFD2DFF2A9F42D5008A5521 /* AppDelegate.swift in Sources */,
 				5CFD2E012A9F42D5008A5521 /* SceneDelegate.swift in Sources */,
+				5C1E407C2B1C4672005EFFF0 /* RPSManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

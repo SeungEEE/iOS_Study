@@ -18,8 +18,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "영화목록"
+        
         setupTableView()
         setupDatas()
+    }
+    
+    
+    @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+        movieDataManager.updateMovieData()
+        tableView.reloadData()
     }
     
     func setupTableView() {

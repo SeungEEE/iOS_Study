@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct RPSManager {
+protocol RPSManagerProtocol {
+    func getRpsResult(comChoice: Rps, myChoice: Rps) -> String
+}
+
+// 핵심 비즈니스 로직(Domain)
+struct RPSManager: RPSManagerProtocol {
     
     func getRpsResult(comChoice: Rps, myChoice: Rps) -> String {
         if comChoice == myChoice {

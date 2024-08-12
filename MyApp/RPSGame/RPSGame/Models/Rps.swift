@@ -7,8 +7,8 @@
 
 import UIKit
 
-// 원시값(raw value)
-enum Rps: Int {
+//CaseIterable 프로토콜
+enum Rps: CaseIterable {
     case ready
     case rock
     case paper

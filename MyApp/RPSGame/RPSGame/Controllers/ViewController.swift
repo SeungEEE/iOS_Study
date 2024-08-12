@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var myChoiceLabel: UILabel!
     
     // 데이터 저장 위한 변수 (컴퓨터 선택 / 나의 선택)
-    var comChoice: Rps = Rps(rawValue: Int.random(in: 0...2))!
-    var myChoice: Rps = Rps.rock
+    var comChoice: Rps = Rps.allCases[Int.random(in: 1...3)]
+    var myChoice: Rps = Rps.allCases[Int.random(in: 1...3)]
     
     // 가위바위보 게임(비즈니스 로직) 관리 위한 인스턴스
     var rpsManager = RPSManager()
@@ -30,26 +30,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 1) 첫번째/두번째 이미지뷰에 준비(묵) 이미지를 띄워야 함
-        comImageView.image = #imageLiteral(resourceName: "ready")
-        myImageView.image = UIImage(named: "ready.png")
-        
-        // 2) 첫번째/두번째 레이블에 "준비"라고 문자열을 띄워야 함
-        comChoiceLabel.text = "준비"
-        myChoiceLabel.text = "준비"
-        
-        configureUI()
-    }
-    
-    func configureUI() {
-        // 1) 첫번째/두번째 이미지뷰에 준비(묵) 이미지를 띄워야 함
-        comImageView.image = rpsManager.getReady().rpsInfo.image
-        myImageView.image = rpsManager.getReady().rpsInfo.image
-        
-        // 2) 첫번째/두번째 레이블에 "준비"라고 문자열을 띄워야 함
-        comChoiceLabel.text = rpsManager.getReady().rpsInfo.name
-        myChoiceLabel.text = rpsManager.getReady().rpsInfo.name
-        
+       getReady()
     }
     
     @IBAction func rpsButtonTapped(_ sender: UIButton) {
@@ -63,41 +44,50 @@ class ViewController: UIViewController {
         print(title)
         
         // 가져온 문자를 분기처리해서 myChoice변수에 열거형 형태로 저장
-        rpsManager.userGetSelected(name: title)
+        myChoice = selectedRPS(withString: title)
     }
     
     @IBAction func selectButtonTapped(_ sender: UIButton) {
         
         // 1) 컴퓨터가 랜덤 선택한 것을 이미지 뷰에 표시
         // 2) 컴퓨터가 랜덤 선택한 것을 레이블에 표시
-        comImageView.image = rpsManager.getComputerRPS().rpsInfo.image
-        comChoiceLabel.text = rpsManager.getComputerRPS().rpsInfo.name
+        comImageView.image = comChoice.rpsInfo.image
+        comChoiceLabel.text = comChoice.rpsInfo.name
         
         // 3) 내가 선택한 것을 이미지 뷰에 표시
         // 4) 내가 선택한 것을 레이블에 표시
-        myImageView.image = rpsManager.getUserRPS().rpsInfo.image
-        myChoiceLabel.text = rpsManager.getUserRPS().rpsInfo.name
+        myImageView.image = myChoice.rpsInfo.image
+        myChoiceLabel.text = myChoice.rpsInfo.name
         
         // 5) 컴퓨터가 선택한 것과 내가 선택한 것을 비교해서 이겼는지/졌는지/비겼는지 판단/표시
-        mainLabel.text = rpsManager.getRpsResult()
+        mainLabel.text = rpsManager.getRpsResult(comChoice: self.comChoice, myChoice: self.myChoice)
     }
     
     @IBAction func resetButtonTapped(_ sender: UIButton) {
-        
-        // 1) 컴퓨터가 다시 준비 이미지 뷰에 표시
-        // 2) 컴퓨터가 다시 준비 레이블에 표시
-        comImageView.image = rpsManager.getReady().rpsInfo.image
-        comChoiceLabel.text = rpsManager.getReady().rpsInfo.name
-        
-        // 3) 내 선택 이미지뷰에도 준비 이미지를 표시
-        // 4) 내 선택 레이블에도 준비 문자열 표시
-        myImageView.image = rpsManager.getReady().rpsInfo.image
-        myChoiceLabel.text = rpsManager.getReady().rpsInfo.name
-        
-        // 5) 메인 레이블에도 "선택하세요" 표시
+        getReady()
+        comChoice = Rps.allCases[Int.random(in: 1...3)]
+    }
+    
+    func getReady() {
         mainLabel.text = "선택하세요"
         
-        // 6) 컴퓨터가 다시 랜덤 가위/바위/보를 선택하고 저장
-        rpsManager.allReset()
+        comImageView.image = Rps.ready.rpsInfo.image
+        comChoiceLabel.text = Rps.ready.rpsInfo.name
+        
+        myImageView.image = Rps.ready.rpsInfo.image
+        myChoiceLabel.text = Rps.ready.rpsInfo.name
+    }
+    
+    func selectedRPS(withString name: String) -> Rps {
+        switch name {
+        case "가위":
+            return Rps.scissors
+        case "바위":
+            return Rps.rock
+        case "보":
+            return Rps.paper
+        default:
+            return Rps.ready
+        }
     }
 }

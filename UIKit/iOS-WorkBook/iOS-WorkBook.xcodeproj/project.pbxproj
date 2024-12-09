@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5C52FE042D06E644002E391C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5C52FE032D06E644002E391C /* SnapKit */; };
+		5C52FE0C2D06E6AA002E391C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 5C52FE0B2D06E6AA002E391C /* Then */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C52FE042D06E644002E391C /* SnapKit in Frameworks */,
+				5C52FE0C2D06E6AA002E391C /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +86,7 @@
 			name = "iOS-WorkBook";
 			packageProductDependencies = (
 				5C52FE032D06E644002E391C /* SnapKit */,
+				5C52FE0B2D06E6AA002E391C /* Then */,
 			);
 			productName = "iOS-WorkBook";
 			productReference = 5C52FDD32D06E59F002E391C /* iOS-WorkBook.app */;
@@ -115,6 +118,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				5C52FE022D06E644002E391C /* XCRemoteSwiftPackageReference "SnapKit" */,
+				5C52FE0A2D06E6AA002E391C /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5C52FDD42D06E59F002E391C /* Products */;
@@ -352,6 +356,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		5C52FE0A2D06E6AA002E391C /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -359,6 +371,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5C52FE022D06E644002E391C /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		5C52FE0B2D06E6AA002E391C /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C52FE0A2D06E6AA002E391C /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

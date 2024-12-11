@@ -26,7 +26,9 @@ class LoginViewController: UIViewController {
     // MARK: - Action
     @objc
     private func loginButtonTapped() {
-        
+        let tabBarController = TabBarController()
+        tabBarController.modalPresentationStyle = .fullScreen
+        present(tabBarController, animated: true)
     }
     
     @objc

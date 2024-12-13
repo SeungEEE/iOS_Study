@@ -26,14 +26,17 @@ class LoginViewController: UIViewController {
     // MARK: - Action
     @objc
     private func loginButtonTapped() {
-        
+        let tabBarController = TabBarController()
+        let navigationController = UINavigationController(rootViewController: tabBarController)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: true)
     }
     
     @objc
     private func kakaoLoginButtonTapped() {
         
     }
-
+    
     @objc
     private func appleLoginButtonTapped() {
         

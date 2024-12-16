@@ -10,11 +10,11 @@ import UIKit
 class TabBarController: UITabBarController {
     
     ///ViewController
-    private let homeVC = HomeViewController()
-    private let styleVC = StyleViewController()
-    private let shopVC = ShopViewController()
-    private let savedVC = SavedViewController()
-    private let myVC = MyViewController()
+    private let homeVC = UINavigationController(rootViewController: HomeViewController())
+    private let styleVC = UINavigationController(rootViewController: StyleViewController())
+    private let shopVC = UINavigationController(rootViewController: ShopViewController())
+    private let savedVC =  UINavigationController(rootViewController: SavedViewController())
+    private let myVC = UINavigationController(rootViewController: MyViewController())
     
     override func viewDidLoad() {
         super.viewDidLoad()

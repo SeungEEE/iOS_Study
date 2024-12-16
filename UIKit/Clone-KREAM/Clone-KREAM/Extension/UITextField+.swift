@@ -24,7 +24,8 @@ extension UITextField {
         borderColor: UIColor = .gray,
         cornerRadius: CGFloat = 8,
         padding: CGFloat = 16,
-        keyboardType: UIKeyboardType = .default
+        keyboardType: UIKeyboardType = .default,
+        defaultValueKey: String? = nil
     ) {
         // Placeholder 스타일
         let attributes: [NSAttributedString.Key: Any] = [
@@ -52,5 +53,11 @@ extension UITextField {
         
         // 키보드 타입 설정
         self.keyboardType = keyboardType
+        
+        // UserDefaults에서 기본값 가져오기
+        if let key = defaultValueKey,
+            let defaultValue = UserDefaults.standard.string(forKey: key) {
+            self.text = defaultValue
+        }
     }
 }

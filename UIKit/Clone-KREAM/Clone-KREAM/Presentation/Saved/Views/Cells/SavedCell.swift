@@ -40,15 +40,16 @@ class SavedCell: UITableViewCell {
     /// 이름 + 설명 스택뷰
     private lazy var productStackView = UIStackView().then {
         $0.axis = .vertical
-        $0.spacing = 0
+        $0.spacing = 4
         $0.alignment = .leading
-        $0.distribution = .equalSpacing
+        $0.distribution = .fill
     }
     
     /// 북마크
     public lazy var bookMarkButton = UIButton().then {
         $0.setImage(UIImage(systemName: "bookmark.fill"), for: .normal)
         $0.imageView?.contentMode = .scaleAspectFit
+        $0.imageView?.tintColor = .black
     }
     
     /// 물건 가격
@@ -96,6 +97,8 @@ class SavedCell: UITableViewCell {
         productStackView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(13)
             $0.leading.equalTo(productImageView.snp.trailing).offset(13)
+            $0.width.equalTo(153)
+            $0.height.equalTo(54)
         }
         
         bookMarkButton.snp.makeConstraints {

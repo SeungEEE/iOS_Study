@@ -33,9 +33,12 @@ class MyProfileEditView: UIView {
         $0.textAlignment = .left
     }
     
+    
     /// 유저 이메일 텍스트필드
     public lazy var userEmailTextField = UITextField().then {
-        $0.applyCustomStyle(placeholder: "새로운 이메일을 입력해주세요")
+        $0.applyCustomStyle(placeholder: "새로운 이메일을 입력해주세요",
+                            defaultValueKey: "userId"
+        )
     }
     
     /// 유저 이메일 변경 / 확인 버튼
@@ -65,7 +68,10 @@ class MyProfileEditView: UIView {
     
     /// 유저 비밀번호 텍스트필드
     public lazy var userPwdTextField = UITextField().then {
-        $0.applyCustomStyle(placeholder: "새로운 비밀번호를 입력해주세요")
+        $0.applyCustomStyle(
+            placeholder: "새로운 비밀번호를 입력해주세요",
+            defaultValueKey: "userPwd"
+        )
     }
     
     /// 유저 비밀번호 변경 / 확인 버튼
@@ -98,6 +104,12 @@ class MyProfileEditView: UIView {
     }
     
     // MARK: - Function
+//    private func makeTextField(defaultValueKey: String) -> UITextField {
+//        let tf = UITextField()
+//        let defaultValue = UserDefaults.st
+//    }
+    
+    
     private func setup() {
         backgroundColor = .white
         /// StackView

@@ -19,9 +19,15 @@ class HomeView: UIView {
         /// 셀 등록
         collectionView.register(AdBannerCell.self, forCellWithReuseIdentifier: AdBannerCell.identifier)
         collectionView.register(RecommendationCell.self, forCellWithReuseIdentifier: RecommendationCell.identifier)
+        collectionView.register(ProductCell.self, forCellWithReuseIdentifier: ProductCell.identifier)
+        collectionView.register(UserStoryCell.self, forCellWithReuseIdentifier: UserStoryCell.identifier)
         
         /// 푸터 등록
         collectionView.register(SectionSeparatorFooter.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: SectionSeparatorFooter.identifier)
+        
+        /// 헤더 등록
+        collectionView.register(BaseCellHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: BaseCellHeader.identifier)
+        
         collectionView.backgroundColor = .white
         collectionView.refreshControl = refreshControl
         return collectionView
@@ -35,7 +41,6 @@ class HomeView: UIView {
         $0.addTarget(self, action: #selector(pullRefresh), for: .valueChanged)
     }
 
-    
     // MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -73,6 +78,4 @@ class HomeView: UIView {
             self.refreshControl.endRefreshing()
         })
     }
-
-
 }

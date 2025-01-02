@@ -98,21 +98,21 @@ class ProductCell: BaseCollectionViewCell {
         }
         
         productCount.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.leading.equalToSuperview().offset(-8)
+            $0.top.equalToSuperview().offset(8)
+            $0.trailing.equalToSuperview().offset(-8)
             $0.width.greaterThanOrEqualTo(48)
             $0.height.equalTo(12)
         }
         
         tagButton.snp.makeConstraints {
             $0.top.equalTo(productCount.snp.bottom).offset(92)
-            $0.leading.trailing.equalToSuperview().offset(-10)
+            $0.trailing.equalToSuperview().offset(-10)
             $0.width.equalTo(14.2)
         }
         
         imageView.snp.makeConstraints {
             $0.centerX.centerY.equalToSuperview()
-            $0.width.lessThanOrEqualTo(123)
+            $0.width.equalTo(imageBackgroundColor)
             $0.height.greaterThanOrEqualTo(30)
         }
         

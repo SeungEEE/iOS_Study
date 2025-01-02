@@ -26,7 +26,7 @@ class BaseCellHeader: UICollectionReusableView, CellHeaderProtocol {
     private lazy var headerStack = UIStackView().then {
         $0.axis = .vertical
         $0.spacing = 4
-        $0.distribution = .equalSpacing
+        $0.distribution = .fillEqually
     }
     
     // MARK: - init
@@ -48,20 +48,20 @@ class BaseCellHeader: UICollectionReusableView, CellHeaderProtocol {
     }
     
     private func setConstraints() {
-        headerTitle.snp.makeConstraints {
-            $0.width.greaterThanOrEqualTo(200)
-            $0.height.equalTo(19)
-        }
-        
-        headerSubTitle.snp.makeConstraints {
-            $0.width.greaterThanOrEqualTo(50)
-            $0.height.equalTo(19)
-        }
-        
         headerStack.snp.makeConstraints {
-            $0.top.equalToSuperview().offset(20)
+            $0.top.equalToSuperview().offset(10)
             $0.leading.trailing.bottom.equalToSuperview()
         }
+        
+//        headerTitle.snp.makeConstraints {
+//            $0.width.greaterThanOrEqualTo(200)
+//            $0.height.equalTo(19)
+//        }
+//        
+//        headerSubTitle.snp.makeConstraints {
+//            $0.width.greaterThanOrEqualTo(50)
+//            $0.height.equalTo(19)
+//        }
     }
     
     public func configure(title:String, subTitle: String) {

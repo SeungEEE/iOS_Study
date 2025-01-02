@@ -59,10 +59,10 @@ final class HomeModel {
     static let productData: [ProductModel] = [
         .init(imageView: "product1", productCount: "거래 12.8만", selectedTag: false, titleLabel: "MLB", subTitleLabel: "청키라이너 뉴욕양키스", priceLabel: "139,000원", priceSubLabel: "즉시 구매가"),
         .init(imageView: "product2", productCount: "거래 15.6만", selectedTag: true, titleLabel: "Jordan", subTitleLabel: "Jordan 1 Retro High OG Yellow Ochre", priceLabel: "228,000원", priceSubLabel: "즉시 구매가"),
-        .init(imageView: "product3", productCount: "거래 18.4만", selectedTag: true, titleLabel: "Human", subTitleLabel: "Human MASEW", priceLabel: "228,000원", priceSubLabel: "즉시 구매가"),
-        .init(imageView: "product1", productCount: "거래 12.8만", selectedTag: false, titleLabel: "MLB", subTitleLabel: "청키라이너 뉴욕양키스", priceLabel: "139,000원", priceSubLabel: "즉시 구매가"),
-        .init(imageView: "product2", productCount: "거래 15.6만", selectedTag: true, titleLabel: "Jordan", subTitleLabel: "Jordan 1 Retro High OG Yellow Ochre", priceLabel: "228,000원", priceSubLabel: "즉시 구매가"),
-        .init(imageView: "product3", productCount: "거래 18.4만", selectedTag: true, titleLabel: "Human", subTitleLabel: "Human MASEW", priceLabel: "228,000원", priceSubLabel: "즉시 구매가"),
+        .init(imageView: "product1", productCount: "거래 18.4만", selectedTag: true, titleLabel: "Human", subTitleLabel: "Human MASEW", priceLabel: "228,000원", priceSubLabel: "즉시 구매가"),
+        .init(imageView: "product2", productCount: "거래 12.8만", selectedTag: false, titleLabel: "MLB", subTitleLabel: "청키라이너 뉴욕양키스", priceLabel: "139,000원", priceSubLabel: "즉시 구매가"),
+        .init(imageView: "product1", productCount: "거래 15.6만", selectedTag: true, titleLabel: "Jordan", subTitleLabel: "Jordan 1 Retro High OG Yellow Ochre", priceLabel: "228,000원", priceSubLabel: "즉시 구매가"),
+        .init(imageView: "product2", productCount: "거래 18.4만", selectedTag: true, titleLabel: "Human", subTitleLabel: "Human MASEW", priceLabel: "228,000원", priceSubLabel: "즉시 구매가"),
     ]
     
     /// 유저 스토리 데이터 - 4번째 섹션

@@ -56,7 +56,7 @@ class HomeView: UIView {
     // MARK: - Function
     
     private func setup() {
-        [homeTopView, homeCollectionView].forEach{ addSubview($0)}
+        [homeTopView, homeCollectionView].forEach{ addSubview($0) }
     }
     
     private func setConstraints() {
@@ -65,7 +65,7 @@ class HomeView: UIView {
         }
         
         homeCollectionView.snp.makeConstraints {
-            $0.top.equalTo(homeTopView.snp.bottom).offset(0)
+            $0.top.equalTo(homeTopView.snp.bottom)
             $0.leading.trailing.bottom.equalToSuperview()
         }
     }

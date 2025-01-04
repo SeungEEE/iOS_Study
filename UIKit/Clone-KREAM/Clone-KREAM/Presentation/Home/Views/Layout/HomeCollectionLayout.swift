@@ -18,6 +18,10 @@ class HomeCollectionLayout {
                 return createBannerSection()
             case 1:
                 return createRecommendationSection()
+            case 2:
+                return createProductSection()
+            case 3:
+                return createUserStorySection()
             default:
                 return nil
             }
@@ -42,6 +46,7 @@ class HomeCollectionLayout {
         
         return section
     }
+    
     /// 추천 섹션 생성
     private static func createRecommendationSection() -> NSCollectionLayoutSection {
         /// 1줄에 5개, 총 2줄
@@ -61,6 +66,54 @@ class HomeCollectionLayout {
         
         return section
     }
+    
+    /// 상품 섹션 생성
+    private static func createProductSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(142), heightDimension: .absolute(237))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(152), heightDimension: .absolute(237))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        group.interItemSpacing = .fixed(8)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 14, leading: 10, bottom: 30, trailing: 10)
+        
+        section.boundarySupplementaryItems = [createHeaderItem(), createFooterItem()]
+        return section
+    }
+    
+    /// 유저스토리 섹션 생성
+    private static func createUserStorySection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(124), heightDimension: .absolute(165))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(134), heightDimension: .absolute(165))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        group.interItemSpacing = .fixed(8)
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.contentInsets = NSDirectionalEdgeInsets(top: 14, leading: 10, bottom: 30, trailing: 10)
+        section.boundarySupplementaryItems = [createHeaderItem(), createFooterItem()]
+        
+        return section
+    }
+    
+    /// 헤더 생성
+    private static func createHeaderItem() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(45))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top)
+        header.pinToVisibleBounds = true
+        
+        return header
+    }
+    
     /// 푸터 생성
     private static func createFooterItem() -> NSCollectionLayoutBoundarySupplementaryItem {
         /// 구분선 길이

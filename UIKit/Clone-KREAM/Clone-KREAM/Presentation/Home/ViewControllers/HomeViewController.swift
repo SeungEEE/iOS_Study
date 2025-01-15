@@ -115,4 +115,15 @@ extension HomeViewController {
             return CGSize.zero
         }
     }
+    
+    /// 마지막 섹션 첫번째 셀 누르면 6주차 구매 뷰 불러옴
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.section == 3 && indexPath.item == 0{
+            let newViewController = TransactionViewController()
+            let navigationController = UINavigationController(rootViewController: newViewController)
+            
+            navigationController.modalPresentationStyle = .fullScreen
+            present(navigationController, animated: true)
+        }
+    }
 }

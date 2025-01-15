@@ -39,7 +39,7 @@ class TransactionView: UIView {
     private lazy var priceLabel: UILabel = makeLabel("228,000원", .systemFont(ofSize: 20, weight: .semibold), color: .black)
     
     /// 상품 이름 라벨
-    public lazy var nameLabel: UILabel = makeLabel("Matin Kim Logo Coating Jumprt", .systemFont(ofSize: 16, weight: .regular), color: .black)
+    public lazy var nameLabel: UILabel = makeLabel("Matin Kim Logo Coating Jumper", .systemFont(ofSize: 16, weight: .regular), color: .black)
     
     /// 상품 설명 (점퍼 색상) 라벨
     public lazy var descriptionLabel: UILabel = makeLabel("마뗑킴 로고 코팅 점퍼 블랙", .systemFont(ofSize: 12, weight: .regular), color: UIColor(red: 0.612, green: 0.612, blue: 0.612, alpha: 1))
@@ -48,13 +48,14 @@ class TransactionView: UIView {
     private lazy var tagButton: UIButton = {
         let btn = UIButton()
         var configuration = UIButton.Configuration.plain()
-        configuration.image = UIImage(systemName: "tag")
+        configuration.image = UIImage(systemName: "bookmark")
         configuration.imagePlacement = .top
         configuration.imagePadding = 1
         configuration.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
         configuration.attributedTitle = AttributedString("2,122", attributes: AttributeContainer([.foregroundColor: UIColor.black, .font: UIFont.systemFont(ofSize: 12, weight: .regular)]))
         
         btn.configuration = configuration
+        btn.tintColor = .black
         return btn
     }()
     
@@ -75,6 +76,19 @@ class TransactionView: UIView {
     
     /// 커스텀 버튼 2개 스택
     private lazy var buttonStack: UIStackView = makeStack(spacing: 6, axis: .horizontal)
+    
+    // MARK: - init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .white
+        setup()
+        setConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     
     // MARK: - Function
     private func makeLabel(_ text: String, _ font: UIFont, color: UIColor) -> UILabel {
@@ -101,11 +115,12 @@ class TransactionView: UIView {
         stack.alignment = .leading
         return stack
     }
+    
     private func setup() {
         /// 스택뷰
-        [priceTitleLabel, priceLabel].forEach{ priceStack.addArrangedSubview($0) }
-        [nameLabel, descriptionLabel].forEach{ productStack.addArrangedSubview($0) }
-        [purchaseButton, sellButton].forEach{ buttonStack.addArrangedSubview($0) }
+        [priceTitleLabel, priceLabel].forEach { priceStack.addArrangedSubview($0) }
+        [nameLabel, descriptionLabel].forEach { productStack.addArrangedSubview($0) }
+        [purchaseButton, sellButton].forEach { buttonStack.addArrangedSubview($0) }
         
         /// 컴포넌트
         [productImageView, productCollectionView, priceStack, productStack, backgroundView].forEach { addSubview($0) }
@@ -146,14 +161,14 @@ class TransactionView: UIView {
         
         tagButton.snp.makeConstraints {
             $0.top.equalToSuperview().offset(12)
-            $0.leading.equalToSuperview().offset(19)
-            $0.width.greaterThanOrEqualTo(20)
-            $0.height.greaterThanOrEqualTo(30)
+            $0.leading.equalToSuperview().offset(16)
+            $0.width.equalTo(36)
+            $0.height.equalTo(38)
         }
         
         buttonStack.snp.makeConstraints {
             $0.top.equalToSuperview().offset(8)
-            $0.leading.equalTo(tagButton.snp.leading).offset(19)
+            $0.leading.equalTo(tagButton.snp.trailing).offset(19)
             $0.width.equalTo(300)
             $0.height.equalTo(49)
         }

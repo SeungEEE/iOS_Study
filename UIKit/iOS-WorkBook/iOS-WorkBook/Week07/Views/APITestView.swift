@@ -19,7 +19,7 @@ final class APITestView: UIView {
         return value
     }()
     
-    private lazy var searchTextField = UITextField().then {
+    public lazy var searchTextField = UITextField().then {
         $0.attributedPlaceholder = NSAttributedString(string: "검색하고 싶은 것을 넣으세요!", attributes: placeholderContainer)
         $0.leftViewMode = .always
         $0.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 14, height: 1))
@@ -38,11 +38,12 @@ final class APITestView: UIView {
         $0.layer.cornerRadius = 8
     }
     
-    private lazy var title: UILabel = makeTitleLabel("타이틀", font: .systemFont(ofSize: 20, weight: .bold))
-    private lazy var responseTitle: UILabel = makeTitleLabel("이 부분에 title 값이 들어오게 해주세요!", font: .systemFont(ofSize: 20, weight: .light))
+    private lazy var title: UILabel = makeTitleLabel("타이틀", font: UIFont.systemFont(ofSize: 20, weight: .bold))
+    private lazy var contentTitle: UILabel = makeTitleLabel("컨텐츠", font: UIFont.systemFont(ofSize: 20, weight: .bold))
     
-    private lazy var contentTitle: UILabel = makeTitleLabel("컨텐츠", font: .systemFont(ofSize: 20, weight: .bold))
-    private lazy var responseContentTitle: UILabel = makeTitleLabel("이 부분에 content 값이 들어오게 해주세요!", font: .systemFont(ofSize: 20, weight: .light))
+    public lazy var responseTitle: UILabel = makeTitleLabel("이 부분에 title 값이 들어오게 해주세요!", font: UIFont.systemFont(ofSize: 20, weight: .light))
+
+    public lazy var responseContentTitle: UILabel = makeTitleLabel("이 부분에 content 값이 들어오게 해주세요!", font: UIFont.systemFont(ofSize: 20, weight: .light))
     
     /// searchTextField + searchButton
     private lazy var searchStackView: UIStackView = makeStack(axis: .horizontal, spacing: 21)
@@ -58,7 +59,9 @@ final class APITestView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .white
         setup()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -70,6 +73,8 @@ final class APITestView: UIView {
     
     private func makeTitleLabel(_ text: String, font: UIFont) -> UILabel {
         let label = UILabel()
+        label.text = text
+        label.font = font
         label.textAlignment = .center
         label.textColor = UIColor.black
         label.numberOfLines = 0
@@ -102,7 +107,7 @@ final class APITestView: UIView {
             $0.height.equalTo(43)
         }
         
-        searchStackView.snp.makeConstraints {
+        searchTextField.snp.makeConstraints {
             $0.width.equalTo(262)
         }
         
@@ -110,14 +115,14 @@ final class APITestView: UIView {
             $0.top.equalTo(searchStackView.snp.bottom).offset(91)
             $0.leading.equalToSuperview().offset(18.5)
             $0.trailing.equalToSuperview().offset(-18.5)
-            $0.height.equalTo(110)
+            $0.height.lessThanOrEqualTo(110)
         }
         
         contentStackView.snp.makeConstraints {
             $0.top.equalTo(titleStackView.snp.bottom).offset(91)
             $0.leading.equalToSuperview().offset(18.5)
             $0.trailing.equalToSuperview().offset(-18.5)
-            $0.height.equalTo(110)
+            $0.height.greaterThanOrEqualTo(10)
         }
     }
 }

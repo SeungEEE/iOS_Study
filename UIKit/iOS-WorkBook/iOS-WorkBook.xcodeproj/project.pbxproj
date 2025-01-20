@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5C298C252D3D2B400079438E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C298C242D3D2B400079438E /* Alamofire */; };
-		5C298C272D3D2B400079438E /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 5C298C262D3D2B400079438E /* AlamofireDynamic */; };
+		5C298C2A2D3E46C80079438E /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 5C298C292D3E46C80079438E /* Alamofire */; };
 		5C52FE042D06E644002E391C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5C52FE032D06E644002E391C /* SnapKit */; };
 		5C52FE0C2D06E6AA002E391C /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 5C52FE0B2D06E6AA002E391C /* Then */; };
 /* End PBXBuildFile section */
@@ -43,8 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C298C252D3D2B400079438E /* Alamofire in Frameworks */,
-				5C298C272D3D2B400079438E /* AlamofireDynamic in Frameworks */,
+				5C298C2A2D3E46C80079438E /* Alamofire in Frameworks */,
 				5C52FE042D06E644002E391C /* SnapKit in Frameworks */,
 				5C52FE0C2D06E6AA002E391C /* Then in Frameworks */,
 			);
@@ -91,8 +89,7 @@
 			packageProductDependencies = (
 				5C52FE032D06E644002E391C /* SnapKit */,
 				5C52FE0B2D06E6AA002E391C /* Then */,
-				5C298C242D3D2B400079438E /* Alamofire */,
-				5C298C262D3D2B400079438E /* AlamofireDynamic */,
+				5C298C292D3E46C80079438E /* Alamofire */,
 			);
 			productName = "iOS-WorkBook";
 			productReference = 5C52FDD32D06E59F002E391C /* iOS-WorkBook.app */;
@@ -125,7 +122,7 @@
 			packageReferences = (
 				5C52FE022D06E644002E391C /* XCRemoteSwiftPackageReference "SnapKit" */,
 				5C52FE0A2D06E6AA002E391C /* XCRemoteSwiftPackageReference "Then" */,
-				5C298C232D3D2B400079438E /* XCRemoteSwiftPackageReference "Alamofire" */,
+				5C298C282D3E46C80079438E /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 5C52FDD42D06E59F002E391C /* Products */;
@@ -355,7 +352,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		5C298C232D3D2B400079438E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		5C298C282D3E46C80079438E /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
 			requirement = {
@@ -382,15 +379,10 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5C298C242D3D2B400079438E /* Alamofire */ = {
+		5C298C292D3E46C80079438E /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 5C298C232D3D2B400079438E /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 5C298C282D3E46C80079438E /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		5C298C262D3D2B400079438E /* AlamofireDynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5C298C232D3D2B400079438E /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = AlamofireDynamic;
 		};
 		5C52FE032D06E644002E391C /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

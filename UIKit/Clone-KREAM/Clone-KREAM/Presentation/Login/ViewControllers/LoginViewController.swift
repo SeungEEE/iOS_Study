@@ -52,7 +52,17 @@ class LoginViewController: UIViewController {
     
     @objc
     private func kakaoLoginButtonTapped() {
-        
+        Task {
+            do {
+                let acceessToken = try await KakaoLoginManager.shared.fetchAcessToken()
+                let nickName = try await KakaoLoginManager.shared.fetchUserNickname(accessToken: acceessToken)
+                let keyChainCheck = KeyChainManager.standard.saveSesstion(UserKeyChainInfo(accessToken: acceessToken, nickName: nickName), for: "KreamKeyChain")
+                
+                print("키체인 저장 확인: \(keyChainCheck)")
+                
+                changeRootView()
+            }
+        }
     }
     
     @objc

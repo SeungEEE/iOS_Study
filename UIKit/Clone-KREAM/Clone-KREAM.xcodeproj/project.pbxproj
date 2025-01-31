@@ -12,10 +12,12 @@
 		5C8594F32D4260CD0060CB38 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 5C8594F22D4260CD0060CB38 /* KakaoSDKAuth */; };
 		5C8594F52D4260CD0060CB38 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = 5C8594F42D4260CD0060CB38 /* KakaoSDKUser */; };
 		5C85959A2D48C0ED0060CB38 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 5C8595992D48C0ED0060CB38 /* Moya */; };
+		5C85959C2D4CAD9D0060CB38 /* Secrets.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 5C85959B2D4CAD9D0060CB38 /* Secrets.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5C52FE8C2D074C01002E391C /* Clone-KREAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Clone-KREAM.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C85959B2D4CAD9D0060CB38 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -58,6 +60,7 @@
 		5C52FE832D074C01002E391C = {
 			isa = PBXGroup;
 			children = (
+				5C85959B2D4CAD9D0060CB38 /* Secrets.xcconfig */,
 				5C52FE8E2D074C01002E391C /* Clone-KREAM */,
 				5C52FE8D2D074C01002E391C /* Products */,
 			);
@@ -146,6 +149,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C85959C2D4CAD9D0060CB38 /* Secrets.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +168,7 @@
 /* Begin XCBuildConfiguration section */
 		5C52FEA02D074C03002E391C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C85959B2D4CAD9D0060CB38 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

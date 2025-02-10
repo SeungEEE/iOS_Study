@@ -13,5 +13,5 @@ struct UserResponseModel: Codable {
     let password: String
     let name: String
     let role: String
-    let avator: String
+    let avatar: String
 }

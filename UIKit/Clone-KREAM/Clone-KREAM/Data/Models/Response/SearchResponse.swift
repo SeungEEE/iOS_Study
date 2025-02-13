@@ -27,7 +27,7 @@ struct Product: Codable {
     let brand: String?
     let sku: String
     let weight: Double
-    let dimensions: [Dimension]
+    let dimensions: Dimensions
     let warrantyInformation: String
     let shippingInformation: String
     let availabilityStatus: String
@@ -36,10 +36,10 @@ struct Product: Codable {
     let minimumOrderQuantity: Int
     let meta: Meta
     let images: [String]
-    let thumbnails: String
+    let thumbnail: String
 }
 
-struct Dimension: Codable {
+struct Dimensions: Codable {
     let width: Double
     let height: Double
     let depth: Double

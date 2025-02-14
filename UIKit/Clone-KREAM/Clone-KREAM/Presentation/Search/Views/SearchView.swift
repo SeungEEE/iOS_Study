@@ -122,8 +122,8 @@ class SearchView: UIView {
         recentSearchStackView.snp.makeConstraints {
             $0.top.equalTo(recentSearchLabel.snp.bottom).offset(15)
             $0.leading.equalToSuperview().offset(16)
-            $0.width.equalTo(100)
-            $0.height.equalTo(20)
+            $0.width.greaterThanOrEqualTo(100)
+            $0.height.greaterThanOrEqualTo(20)
         }
     }
 }

@@ -14,12 +14,21 @@ class HomeViewController: UIViewController {
         $0.backgroundColor = .white
         $0.homeCollectionView.delegate = self
         $0.homeCollectionView.dataSource = self
+        $0.homeTopView.isUserInteractionEnabled = true
+        $0.homeTopView.onSearchBarTapped = { [weak self] in
+            self?.navigationToSearchViewController()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view = homeView
+    }
+    
+    private func navigationToSearchViewController() {
+        let searchVC = SearchViewController()
+        navigationController?.pushViewController(searchVC, animated: true)
     }
 }
 

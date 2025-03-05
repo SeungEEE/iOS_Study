@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5CCA745C2D718F2C00239886 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 5CCA745B2D718F2C00239886 /* ComposableArchitecture */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5C247DBF2D6C63DA004529A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C247DA62D6C63D8004529A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C247DAD2D6C63D8004529A5;
+			remoteInfo = CounterTCA;
+		};
+		5C247DC92D6C63DA004529A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5C247DA62D6C63D8004529A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5C247DAD2D6C63D8004529A5;
+			remoteInfo = CounterTCA;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5C247DAE2D6C63D8004529A5 /* CounterTCA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterTCA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C247DBE2D6C63DA004529A5 /* CounterTCATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterTCATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C247DC82D6C63DA004529A5 /* CounterTCAUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CounterTCAUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5C1C56842D730D8700033846 /* Exceptions for "CounterTCA" folder in "CounterTCA" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 5C247DAD2D6C63D8004529A5 /* CounterTCA */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		5C247DB02D6C63D8004529A5 /* CounterTCA */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5C1C56842D730D8700033846 /* Exceptions for "CounterTCA" folder in "CounterTCA" target */,
+			);
+			path = CounterTCA;
+			sourceTree = "<group>";
+		};
+		5C247DC12D6C63DA004529A5 /* CounterTCATests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CounterTCATests;
+			sourceTree = "<group>";
+		};
+		5C247DCB2D6C63DA004529A5 /* CounterTCAUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = CounterTCAUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5C247DAB2D6C63D8004529A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5CCA745C2D718F2C00239886 /* ComposableArchitecture in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C247DBB2D6C63DA004529A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C247DC52D6C63DA004529A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5C247DA52D6C63D8004529A5 = {
+			isa = PBXGroup;
+			children = (
+				5C247DB02D6C63D8004529A5 /* CounterTCA */,
+				5C247DC12D6C63DA004529A5 /* CounterTCATests */,
+				5C247DCB2D6C63DA004529A5 /* CounterTCAUITests */,
+				5C247DAF2D6C63D8004529A5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5C247DAF2D6C63D8004529A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5C247DAE2D6C63D8004529A5 /* CounterTCA.app */,
+				5C247DBE2D6C63DA004529A5 /* CounterTCATests.xctest */,
+				5C247DC82D6C63DA004529A5 /* CounterTCAUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5C247DAD2D6C63D8004529A5 /* CounterTCA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C247DD22D6C63DA004529A5 /* Build configuration list for PBXNativeTarget "CounterTCA" */;
+			buildPhases = (
+				5C247DAA2D6C63D8004529A5 /* Sources */,
+				5C247DAB2D6C63D8004529A5 /* Frameworks */,
+				5C247DAC2D6C63D8004529A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				5C247DB02D6C63D8004529A5 /* CounterTCA */,
+			);
+			name = CounterTCA;
+			packageProductDependencies = (
+				5CCA745B2D718F2C00239886 /* ComposableArchitecture */,
+			);
+			productName = CounterTCA;
+			productReference = 5C247DAE2D6C63D8004529A5 /* CounterTCA.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5C247DBD2D6C63DA004529A5 /* CounterTCATests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C247DD52D6C63DA004529A5 /* Build configuration list for PBXNativeTarget "CounterTCATests" */;
+			buildPhases = (
+				5C247DBA2D6C63DA004529A5 /* Sources */,
+				5C247DBB2D6C63DA004529A5 /* Frameworks */,
+				5C247DBC2D6C63DA004529A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C247DC02D6C63DA004529A5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5C247DC12D6C63DA004529A5 /* CounterTCATests */,
+			);
+			name = CounterTCATests;
+			packageProductDependencies = (
+			);
+			productName = CounterTCATests;
+			productReference = 5C247DBE2D6C63DA004529A5 /* CounterTCATests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5C247DC72D6C63DA004529A5 /* CounterTCAUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5C247DD82D6C63DA004529A5 /* Build configuration list for PBXNativeTarget "CounterTCAUITests" */;
+			buildPhases = (
+				5C247DC42D6C63DA004529A5 /* Sources */,
+				5C247DC52D6C63DA004529A5 /* Frameworks */,
+				5C247DC62D6C63DA004529A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5C247DCA2D6C63DA004529A5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				5C247DCB2D6C63DA004529A5 /* CounterTCAUITests */,
+			);
+			name = CounterTCAUITests;
+			packageProductDependencies = (
+			);
+			productName = CounterTCAUITests;
+			productReference = 5C247DC82D6C63DA004529A5 /* CounterTCAUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5C247DA62D6C63D8004529A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					5C247DAD2D6C63D8004529A5 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					5C247DBD2D6C63DA004529A5 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 5C247DAD2D6C63D8004529A5;
+					};
+					5C247DC72D6C63DA004529A5 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 5C247DAD2D6C63D8004529A5;
+					};
+				};
+			};
+			buildConfigurationList = 5C247DA92D6C63D8004529A5 /* Build configuration list for PBXProject "CounterTCA" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5C247DA52D6C63D8004529A5;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				5CCA745A2D718F2C00239886 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 5C247DAF2D6C63D8004529A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5C247DAD2D6C63D8004529A5 /* CounterTCA */,
+				5C247DBD2D6C63DA004529A5 /* CounterTCATests */,
+				5C247DC72D6C63DA004529A5 /* CounterTCAUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5C247DAC2D6C63D8004529A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C247DBC2D6C63DA004529A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C247DC62D6C63DA004529A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5C247DAA2D6C63D8004529A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C247DBA2D6C63DA004529A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5C247DC42D6C63DA004529A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5C247DC02D6C63DA004529A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C247DAD2D6C63D8004529A5 /* CounterTCA */;
+			targetProxy = 5C247DBF2D6C63DA004529A5 /* PBXContainerItemProxy */;
+		};
+		5C247DCA2D6C63DA004529A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5C247DAD2D6C63D8004529A5 /* CounterTCA */;
+			targetProxy = 5C247DC92D6C63DA004529A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5C247DD02D6C63DA004529A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5C247DD12D6C63DA004529A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5C247DD32D6C63DA004529A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CounterTCA/Preview Content\"";
+				DEVELOPMENT_TEAM = D8KHM6Q8SA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CounterTCA/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seunge.app.CounterTCA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5C247DD42D6C63DA004529A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CounterTCA/Preview Content\"";
+				DEVELOPMENT_TEAM = D8KHM6Q8SA;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CounterTCA/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seunge.app.CounterTCA;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5C247DD62D6C63DA004529A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8KHM6Q8SA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seunge.app.CounterTCATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CounterTCA.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CounterTCA";
+			};
+			name = Debug;
+		};
+		5C247DD72D6C63DA004529A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8KHM6Q8SA;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seunge.app.CounterTCATests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CounterTCA.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CounterTCA";
+			};
+			name = Release;
+		};
+		5C247DD92D6C63DA004529A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8KHM6Q8SA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seunge.app.CounterTCAUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CounterTCA;
+			};
+			name = Debug;
+		};
+		5C247DDA2D6C63DA004529A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D8KHM6Q8SA;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.seunge.app.CounterTCAUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = CounterTCA;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5C247DA92D6C63D8004529A5 /* Build configuration list for PBXProject "CounterTCA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C247DD02D6C63DA004529A5 /* Debug */,
+				5C247DD12D6C63DA004529A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C247DD22D6C63DA004529A5 /* Build configuration list for PBXNativeTarget "CounterTCA" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C247DD32D6C63DA004529A5 /* Debug */,
+				5C247DD42D6C63DA004529A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C247DD52D6C63DA004529A5 /* Build configuration list for PBXNativeTarget "CounterTCATests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C247DD62D6C63DA004529A5 /* Debug */,
+				5C247DD72D6C63DA004529A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5C247DD82D6C63DA004529A5 /* Build configuration list for PBXNativeTarget "CounterTCAUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5C247DD92D6C63DA004529A5 /* Debug */,
+				5C247DDA2D6C63DA004529A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5CCA745A2D718F2C00239886 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.17.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5CCA745B2D718F2C00239886 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5CCA745A2D718F2C00239886 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 5C247DA62D6C63D8004529A5 /* Project object */;
+}

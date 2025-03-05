@@ -8,6 +8,26 @@
 import SwiftUI
 import ComposableArchitecture
 
+struct NumberFactClient {
+    var fetch: @Sendable(Int) async throws -> String
+}
+
+extension NumberFactClient: DependencyKey {
+    static var liveValue = Self { number in
+        let (data, _) = try await URLSession.shared.data(
+            from: URL(string: "http://www.numbersapi.com/\(number)")!
+        )
+        return String(decoding: data, as: UTF8.self)
+    }
+}
+
+extension DependencyValues {
+    var numberFact: NumberFactClient {
+        get { self[NumberFactClient.self]}
+        set { self[NumberFactClient.self] = newValue }
+    }
+}
+
 struct CounterFeature: Reducer {
     struct State: Equatable {
         var count = 0
@@ -29,6 +49,9 @@ struct CounterFeature: Reducer {
         case timer
     }
     
+    @Dependency(\.continuousClock) var clock
+    @Dependency(\.numberFact) var numberFact
+    
     var body: some ReducerOf<Self> {
         Reduce { state , action in
             switch action {
@@ -46,12 +69,7 @@ struct CounterFeature: Reducer {
                 state.fact = nil
                 state.isLoadingFact = true
                 return .run { [count = state.count] send in
-                    try await Task.sleep(for: .seconds(1))
-                    let (data, _) = try await URLSession.shared.data(
-                        from: URL(string: "http://www.numbersapi.com/\(count)")!
-                    )
-                    let fact = String(decoding: data, as: UTF8.self)
-                    await send(.factResponse(fact))
+                    try await send(.factResponse(numberFact.fetch(count)))
                 }
                 
             case.incrementButtonTapped:
@@ -67,8 +85,7 @@ struct CounterFeature: Reducer {
                 state.isTimerOn.toggle()
                 if state.isTimerOn {
                     return .run { send in
-                        while true {
-                            try await Task.sleep(for: .seconds(1))
+                        for await _ in self.clock.timer(interval: .seconds(1)) {
                             await send(.timerTicked)
                         }
                     }
@@ -76,7 +93,7 @@ struct CounterFeature: Reducer {
                 } else {
                     return .cancel(id: CancelID.timer)
                 }
-                return .none
+                
             }
         }
     }

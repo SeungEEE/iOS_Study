@@ -1,19 +1,19 @@
 //
-//  HexagonParmeters.swift
+//  HexagonParameters.swift
 //  Landmarks
 //
-//  Created by 이승진 on 3/5/25.
+//  Created by 이승진 on 3/6/25.
 //
 
-import Foundation
+import CoreGraphics
 
-struct HexagonParmeters {
+struct HexagonParameters {
     struct Segment {
         let line: CGPoint
         let curve: CGPoint
         let control: CGPoint
     }
-
+    
     static let adjustment: CGFloat = 0.085
     
     static let segments = [
@@ -28,9 +28,9 @@ struct HexagonParmeters {
             control: CGPoint(x: 0.00, y: 0.25 + adjustment)
         ),
         Segment(
-            line:    CGPoint(x: 0.00, y: 0.70 + adjustment),
-            curve:   CGPoint(x: 0.05, y: 0.80 + adjustment),
-            control: CGPoint(x: 0.00, y: 0.75 + adjustment)
+            line:    CGPoint(x: 0.00, y: 0.70 - adjustment),
+            curve:   CGPoint(x: 0.05, y: 0.80 - adjustment),
+            control: CGPoint(x: 0.00, y: 0.75 - adjustment)
         ),
         Segment(
             line:    CGPoint(x: 0.40, y: 0.95),
@@ -38,9 +38,9 @@ struct HexagonParmeters {
             control: CGPoint(x: 0.50, y: 1.00)
         ),
         Segment(
-            line:    CGPoint(x: 0.95, y: 0.80 + adjustment),
-            curve:   CGPoint(x: 1.00, y: 0.70 + adjustment),
-            control: CGPoint(x: 1.00, y: 0.75 + adjustment)
+            line:    CGPoint(x: 0.95, y: 0.80 - adjustment),
+            curve:   CGPoint(x: 1.00, y: 0.70 - adjustment),
+            control: CGPoint(x: 1.00, y: 0.75 - adjustment)
         ),
         Segment(
             line:    CGPoint(x: 1.00, y: 0.30 + adjustment),

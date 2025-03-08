@@ -28,6 +28,7 @@
 		5C85A8B42D7C18EB00D774A3 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85A8B32D7C18EB00D774A3 /* Landmark.swift */; };
 		5C85A8B62D7C1B8900D774A3 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C85A8B52D7C1B8900D774A3 /* landmarkData.json */; };
 		5C85A8B82D7C1CFB00D774A3 /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85A8B72D7C1CFB00D774A3 /* LandmarkRow.swift */; };
+		5C96A39F2D7C20B900AAA9E0 /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96A39E2D7C20B900AAA9E0 /* LandmarkList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		5C85A8B32D7C18EB00D774A3 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
 		5C85A8B52D7C1B8900D774A3 /* landmarkData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 		5C85A8B72D7C1CFB00D774A3 /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
+		5C96A39E2D7C20B900AAA9E0 /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				5C074BB22C3599580075358B /* CircleImage.swift */,
 				5C85A8B32D7C18EB00D774A3 /* Landmark.swift */,
 				5C85A8B72D7C1CFB00D774A3 /* LandmarkRow.swift */,
+				5C96A39E2D7C20B900AAA9E0 /* LandmarkList.swift */,
 			);
 			path = Landmarks;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				5C074BB32C3599580075358B /* CircleImage.swift in Sources */,
 				5C85A8AF2D7B1BC800D774A3 /* HikeView.swift in Sources */,
 				5C85A8B02D7B1BC800D774A3 /* HikeGraph.swift in Sources */,
+				5C96A39F2D7C20B900AAA9E0 /* LandmarkList.swift in Sources */,
 				5C85A8B12D7B1BC800D774A3 /* HikeDetail.swift in Sources */,
 				5C85A8B22D7B1BC800D774A3 /* GraphCapsule.swift in Sources */,
 				5C1945692D798C74004A748F /* Badge.swift in Sources */,

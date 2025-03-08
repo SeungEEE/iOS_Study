@@ -29,6 +29,7 @@
 		5C85A8B62D7C1B8900D774A3 /* landmarkData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C85A8B52D7C1B8900D774A3 /* landmarkData.json */; };
 		5C85A8B82D7C1CFB00D774A3 /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C85A8B72D7C1CFB00D774A3 /* LandmarkRow.swift */; };
 		5C96A39F2D7C20B900AAA9E0 /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96A39E2D7C20B900AAA9E0 /* LandmarkList.swift */; };
+		5C96A3A12D7C21AD00AAA9E0 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C96A3A02D7C21AD00AAA9E0 /* LandmarkDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		5C85A8B52D7C1B8900D774A3 /* landmarkData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = landmarkData.json; sourceTree = "<group>"; };
 		5C85A8B72D7C1CFB00D774A3 /* LandmarkRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkRow.swift; sourceTree = "<group>"; };
 		5C96A39E2D7C20B900AAA9E0 /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
+		5C96A3A02D7C21AD00AAA9E0 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				5C85A8B32D7C18EB00D774A3 /* Landmark.swift */,
 				5C85A8B72D7C1CFB00D774A3 /* LandmarkRow.swift */,
 				5C96A39E2D7C20B900AAA9E0 /* LandmarkList.swift */,
+				5C96A3A02D7C21AD00AAA9E0 /* LandmarkDetail.swift */,
 			);
 			path = Landmarks;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				5C1945632D79866B004A748F /* HexagonParameters.swift in Sources */,
 				5C85A8B42D7C18EB00D774A3 /* Landmark.swift in Sources */,
 				5C074BA72C3597E60075358B /* ContentView.swift in Sources */,
+				5C96A3A12D7C21AD00AAA9E0 /* LandmarkDetail.swift in Sources */,
 				5C1945612D789AF6004A748F /* BadgeBackground.swift in Sources */,
 				5C074BB52C3599D20075358B /* MapView.swift in Sources */,
 				5C074BA52C3597E60075358B /* LandmarksApp.swift in Sources */,

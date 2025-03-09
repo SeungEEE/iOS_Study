@@ -1,30 +1,30 @@
-//
-//  LandmarkList.swift
-//  Landmarks
-//
-//  Created by 이승진 on 3/8/25.
-//
+/*
+See the LICENSE.txt file for this sample’s licensing information.
+
+Abstract:
+A list view for the watchOS app.
+*/
 
 import SwiftUI
 
 struct LandmarkList: View {
     @Environment(ModelData.self) var modelData
     @State private var showFavoritesOnly = false
-    
-    var filteredLandmakrs: [Landmark] {
+
+    var filteredLandmarks: [Landmark] {
         modelData.landmarks.filter { landmark in
             (!showFavoritesOnly || landmark.isFavorite)
         }
     }
-    
+
     var body: some View {
         NavigationSplitView {
             List {
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorites only")
                 }
-                
-                ForEach(filteredLandmakrs) { landmark in
+
+                ForEach(filteredLandmarks) { landmark in
                     NavigationLink {
                         LandmarkDetail(landmark: landmark)
                     } label: {
@@ -32,9 +32,8 @@ struct LandmarkList: View {
                     }
                 }
             }
-            .animation(.default, value: filteredLandmakrs)
+            .animation(.default, value: filteredLandmarks)
             .navigationTitle("Landmarks")
-            .frame(minWidth: 300)
         } detail: {
             Text("Select a Landmark")
         }

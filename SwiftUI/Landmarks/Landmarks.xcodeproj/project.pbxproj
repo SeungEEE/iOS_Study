@@ -136,8 +136,18 @@
 		5CDD37572D7D890F00CFB28E /* WatchLandmarks Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchLandmarks Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5C3FD5CF2D7DD6B6005EB93E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				LandmarkCommands.swift,
+			);
+			target = 5C074BA02C3597E60075358B /* Landmarks */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		5C9FBE1A2D7DCAA8000934C4 /* MacLandmarks */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = MacLandmarks; sourceTree = "<group>"; };
+		5C9FBE1A2D7DCAA8000934C4 /* MacLandmarks */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (5C3FD5CF2D7DD6B6005EB93E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = MacLandmarks; sourceTree = "<group>"; };
 		5CDD37582D7D890F00CFB28E /* WatchLandmarks Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "WatchLandmarks Watch App"; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 

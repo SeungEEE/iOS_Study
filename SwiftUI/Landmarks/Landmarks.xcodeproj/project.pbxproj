@@ -42,6 +42,7 @@
 		5CA696CD2D7D7AD200215634 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA696CC2D7D7AD200215634 /* PageViewController.swift */; };
 		5CA696CF2D7D7DCB00215634 /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA696CE2D7D7DCA00215634 /* FeatureCard.swift */; };
 		5CB2F3E02D7D7FC0009037BE /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CB2F3DF2D7D7FC0009037BE /* PageView.swift */; };
+		5CDD37522D7D859800CFB28E /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDD37512D7D859800CFB28E /* PageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		5CA696CC2D7D7AD200215634 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		5CA696CE2D7D7DCA00215634 /* FeatureCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureCard.swift; sourceTree = "<group>"; };
 		5CB2F3DF2D7D7FC0009037BE /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		5CDD37512D7D859800CFB28E /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +238,7 @@
 				5CA696CC2D7D7AD200215634 /* PageViewController.swift */,
 				5CA696CE2D7D7DCA00215634 /* FeatureCard.swift */,
 				5CB2F3DF2D7D7FC0009037BE /* PageView.swift */,
+				5CDD37512D7D859800CFB28E /* PageControl.swift */,
 			);
 			path = PageView;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				5C96A3A32D7C3A0900AAA9E0 /* FavoriteButton.swift in Sources */,
 				5C1945632D79866B004A748F /* HexagonParameters.swift in Sources */,
 				5C85A8B42D7C18EB00D774A3 /* Landmark.swift in Sources */,
+				5CDD37522D7D859800CFB28E /* PageControl.swift in Sources */,
 				5C074BA72C3597E60075358B /* ContentView.swift in Sources */,
 				5C77B7472D7D65A100119F19 /* CategoryItem.swift in Sources */,
 				5C96A3A12D7C21AD00AAA9E0 /* LandmarkDetail.swift in Sources */,

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SplashView: View {
     var body: some View {
-        ZStack {
+        ZStack(alignment: .center) {
             Color(.green01)
             
             Image("logo")

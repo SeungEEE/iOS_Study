@@ -49,7 +49,7 @@ struct LoginView: View {
         VStack(alignment: .center, spacing: 47) {
             VStack {
                 TextField("아이디", text: $id)
-                
+                // prompt
                 Divider()
             }
             
@@ -92,9 +92,9 @@ struct LoginView: View {
                         .underline(color: Color.gray04)
                 }
                 
-                makeButton(image: Image("loginKakao"))
+                makeButton(image: Image(.loginKakao))
                 
-                makeButton(image: Image("loginApple"))
+                makeButton(image: Image(.loginApple))
             }
             
             Spacer()
@@ -108,11 +108,22 @@ struct LoginView: View {
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: 301)
+                .frame(maxWidth: 306)
         }
     }
 }
 
-#Preview {
-    LoginView()
+//#Preview {
+//    LoginView()
+//}
+
+struct LoginView_Preview: PreviewProvider {
+    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
+    static var previews: some View {
+        ForEach(devices, id: \.self) { device in
+            LoginView()
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+        }
+    }
 }

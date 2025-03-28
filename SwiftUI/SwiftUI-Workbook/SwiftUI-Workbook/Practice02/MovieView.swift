@@ -27,6 +27,21 @@ struct MovieView: View {
             Spacer()
             
             savedMovieText
+            
+            Button {
+            
+            } label: {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(.clear)
+                        .stroke(.black, style: .init(lineWidth: 1))
+                        
+                    Text("대표 영화로 설정")
+                        .font(.system(size: 20, weight: .regular))
+                        .foregroundStyle(.black)
+                        
+                }
+            }
         }
         .frame(width: 379, height: 594)
         

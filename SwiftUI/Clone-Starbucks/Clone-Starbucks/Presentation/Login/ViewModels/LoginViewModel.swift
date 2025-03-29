@@ -5,8 +5,9 @@
 //  Created by 이승진 on 3/17/25.
 //
 
-import Foundation
+import SwiftUI
 
-struct LoginViewModel {
-    
+class LoginViewModel: ObservableObject {
+    @Published var id: String = ""
+    @Published var pwd: String = ""
 }

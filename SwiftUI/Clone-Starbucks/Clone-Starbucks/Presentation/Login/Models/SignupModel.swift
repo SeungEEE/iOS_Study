@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct SignupModel: Codable {
-    var nickname: String
-    var email: String
-    var password: String
+struct SignupModel {
+    var nickname: String // 닉네임
+    var id: String // 이메일
+    var pwd: String // 비밀번호
 }

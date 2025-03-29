@@ -67,7 +67,7 @@ struct SignupView: View {
         } label: {
             Text("생성하기")
                 .frame(maxWidth: .infinity)
-                .font(.mainTextMedium16)
+                .font(.mainTextMedium18)
                 .foregroundStyle(Color.white)
                 .padding(.top, 19)
                 .padding(.bottom, 19)

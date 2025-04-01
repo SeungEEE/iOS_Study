@@ -12,16 +12,22 @@ struct SignupView: View {
     @FocusState private var nameIsFocused: Bool
     @FocusState private var idIsFocused: Bool
     @FocusState private var pwdIsFocused: Bool
+    @State private var isSignedUp = false
     
     var body: some View {
-        VStack {
-            signupMainView
-            
-            Spacer()
-            
-            signupButton
+        NavigationStack {
+            VStack {
+                signupMainView
+                
+                Spacer()
+                
+                signupButton
+            }
+            .safeAreaPadding(EdgeInsets(top: 210, leading: 19, bottom: 72, trailing: 19))
+            .navigationDestination(isPresented: $isSignedUp) {
+                CustomTabView() 
+            }
         }
-        .safeAreaPadding(EdgeInsets(top: 210, leading: 19, bottom: 72, trailing: 19))
     }
     
     private var signupMainView: some View {
@@ -64,6 +70,7 @@ struct SignupView: View {
             print("\(viewModel.signupModel.nickname)")
             print("\(viewModel.signupModel.id)")
             print("\(viewModel.signupModel.pwd)")
+            isSignedUp = true
         } label: {
             Text("생성하기")
                 .frame(maxWidth: .infinity)

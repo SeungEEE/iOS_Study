@@ -66,6 +66,17 @@ struct CustomTabView: View {
     }
 }
 
-#Preview {
-    CustomTabView()
+//#Preview {
+//    CustomTabView()
+//}
+
+struct CustomTabView_Preview: PreviewProvider {
+    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
+    static var previews: some View {
+        ForEach(devices, id: \.self) { device in
+            CustomTabView()
+                .previewDevice(PreviewDevice(rawValue: device))
+                .previewDisplayName(device)
+        }
+    }
 }

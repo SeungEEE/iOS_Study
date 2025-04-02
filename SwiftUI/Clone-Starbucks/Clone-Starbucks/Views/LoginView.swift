@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var viewModel = LoginViewModel()
-    
-    @FocusState private var idIsFocused: Bool
-    @FocusState private var pwdIsFocused: Bool
+    @State private var id: String = ""
+    @State private var pwd: String = ""
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -49,26 +47,17 @@ struct LoginView: View {
     /// 로그인 아이디 비밀번호 입력
     private var loginCenterTitle: some View {
         VStack(alignment: .center, spacing: 47) {
+            VStack {
+                TextField("아이디", text: $id)
+                
+                Divider()
+            }
             
-            TextField("아이디", text: $viewModel.id)
-                .padding(.vertical, 8)
-                .focused($idIsFocused)
-                .overlay (
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(idIsFocused ? .green01 : .gray00),
-                    alignment: .bottom
-                )
-            
-            TextField("비밀번호", text: $viewModel.pwd)
-                .padding(.vertical, 8)
-                .focused($pwdIsFocused)
-                .overlay (
-                    Rectangle()
-                        .frame(height: 1)
-                        .foregroundColor(pwdIsFocused ? .green01 : .gray00),
-                    alignment: .bottom
-                )
+            VStack {
+                TextField("비밀번호", text: $pwd)
+                
+                Divider()
+            }
             
             Button {
                 print("로그인 버튼입니다.")
@@ -103,9 +92,9 @@ struct LoginView: View {
                         .underline(color: Color.gray04)
                 }
                 
-                makeButton(image: Image(.loginKakao))
+                makeButton(image: Image("loginKakao"))
                 
-                makeButton(image: Image(.loginApple))
+                makeButton(image: Image("loginApple"))
             }
             
             Spacer()
@@ -119,22 +108,11 @@ struct LoginView: View {
             image
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: 306)
+                .frame(maxWidth: 301)
         }
     }
 }
 
-//#Preview {
-//    LoginView()
-//}
-
-struct LoginView_Preview: PreviewProvider {
-    static var devices = ["iPhone 11", "iPhone 16 Pro Max"]
-    static var previews: some View {
-        ForEach(devices, id: \.self) { device in
-            LoginView()
-                .previewDevice(PreviewDevice(rawValue: device))
-                .previewDisplayName(device)
-        }
-    }
+#Preview {
+    LoginView()
 }

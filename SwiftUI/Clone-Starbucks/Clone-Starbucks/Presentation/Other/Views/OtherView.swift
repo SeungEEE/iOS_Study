@@ -75,7 +75,6 @@ struct OtherView: View {
                         print("카드 교환권 등록")
                     }
                 }
-                .padding(.horizontal, 0)
                 .padding(.vertical, 16)
                 
                 HStack {
@@ -90,7 +89,6 @@ struct OtherView: View {
                     }
                     
                 }
-                .padding(.horizontal, 0)
                 .padding(.vertical, 16)
             }
         }

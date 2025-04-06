@@ -12,21 +12,27 @@ struct SignupView: View {
     @FocusState private var nameIsFocused: Bool
     @FocusState private var idIsFocused: Bool
     @FocusState private var pwdIsFocused: Bool
-    @State private var isSignedUp = false
+//    @State private var isSignedUp = false
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         NavigationStack {
             VStack {
-                signupMainView
+                CustomNavigationBar(title: "가입하기")
                 
-                Spacer()
-                
-                signupButton
+                VStack {
+                    signupMainView
+                    
+                    Spacer()
+                    
+                    signupButton
+                }
+                .safeAreaPadding(EdgeInsets(top: 210, leading: 19, bottom: 72, trailing: 19))
+//                .navigationDestination(isPresented: $isSignedUp) {
+//                    CustomTabView() 
+//                }
             }
-            .safeAreaPadding(EdgeInsets(top: 210, leading: 19, bottom: 72, trailing: 19))
-            .navigationDestination(isPresented: $isSignedUp) {
-                CustomTabView() 
-            }
+            .navigationBarBackButtonHidden(true)
         }
     }
     
@@ -66,11 +72,15 @@ struct SignupView: View {
     
     private var signupButton: some View {
         Button {
+            guard !viewModel.signupModel.nickname.isEmpty,
+                  !viewModel.signupModel.id.isEmpty,
+                  !viewModel.signupModel.pwd.isEmpty else {
+                return
+            }
+            
             viewModel.saveUserData()
-            print("\(viewModel.signupModel.nickname)")
-            print("\(viewModel.signupModel.id)")
-            print("\(viewModel.signupModel.pwd)")
-            isSignedUp = true
+//            isSignedUp = true
+            dismiss()
         } label: {
             Text("생성하기")
                 .frame(maxWidth: .infinity)

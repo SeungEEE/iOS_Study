@@ -94,9 +94,7 @@ struct LoginView: View {
             Spacer()
             
             VStack(alignment: .center, spacing: 19) {
-                Button {
-                    print("이메일로 회원가입 버튼입니다.")
-                } label: {
+                NavigationLink(destination: SignupView()) {
                     Text("이메일로 회원가입하기")
                         .font(.mainTextRegular12)
                         .foregroundStyle(.gray04)

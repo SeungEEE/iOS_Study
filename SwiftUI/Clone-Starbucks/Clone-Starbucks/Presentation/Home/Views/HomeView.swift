@@ -14,65 +14,72 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                topBanner
-                
-                LazyVStack(alignment: .center, spacing: 20) {
-                    Image(.banner01)
-                        .resizable()
-                        .scaledToFit()
+                VStack(content: {
                     
-                    recommendMenuScrollView
+                    topBanner
                     
-                    Image(.banner02)
-                        .resizable()
-                        .scaledToFit()
+                    LazyVStack(alignment: .center, spacing: 20) {
+                        Image(.banner01)
+                            .resizable()
+                            .scaledToFit()
                         
-                    Image(.banner03)
-                        .resizable()
-                        .scaledToFit()
+                        recommendMenuScrollView
                         
-                    
-                    adMenuScrollView
-                    
-                    Image(.banner04)
-                        .resizable()
-                        .scaledToFit()
-                    
-                    Image(.banner05)
-                        .resizable()
-                        .scaledToFit()
-                    
-                    Image(.banner06)
-                        .resizable()
-                        .scaledToFit()
-                    
-                    dessertMenuScrollView
-                    
-                    Image(.banner07)
-                        .resizable()
-                        .scaledToFit()
-                    
-                    Image(.banner08)
-                        .resizable()
-                        .scaledToFit()
-                    
-                    Image(.banner09)
-                        .resizable()
-                        .scaledToFit()
-                    
-                }
-                .padding(.horizontal, 10)
+                        Image(.banner02)
+                            .resizable()
+                            .scaledToFit()
+                            .padding(.horizontal, 10)
+
+                        Image(.banner03)
+                            .resizable()
+                            .scaledToFit()
+                        
+                        
+                        adMenuScrollView
+                        
+                        Image(.banner04)
+                            .resizable()
+                            .scaledToFit()
+                        
+                        Image(.banner05)
+                            .resizable()
+                            .scaledToFit()
+                        
+                        Image(.banner06)
+                            .resizable()
+                            .scaledToFit()
+                        
+                        dessertMenuScrollView
+                        
+                        Image(.banner07)
+                            .resizable()
+                            .scaledToFit()
+                        
+                        Image(.banner08)
+                            .resizable()
+                            .scaledToFit()
+                        
+                        Image(.banner09)
+                            .resizable()
+                            .scaledToFit()
+                    }
+                    .padding(.top, 23)
+                })
             }
             .navigationDestination(for: Int.self) { coffeeId in
                 CoffeeDetailView(coffee: viewModel.detail(for: coffeeId))
             }
+            
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .ignoresSafeArea(.all)
         }
     }
     
     /// 상단 배너
     private var topBanner: some View {
-        ZStack {
+        ZStack(alignment: .bottom) {
             Image(.topImg)
+            
             VStack(alignment: .leading, spacing: 30) {
                 Text("골든 미모사 그린 티와 함께\n행복한 새해의 축배를 들어요!")
                     .font(.mainTextBold24)
@@ -80,7 +87,7 @@ struct HomeView: View {
                 StarProgressBar(currentStars: 9, maxStars: 12)
             }
             .padding(.horizontal, 36)
-            .padding(.top, 150)
+            .offset(y: 33)
         }
     }
     

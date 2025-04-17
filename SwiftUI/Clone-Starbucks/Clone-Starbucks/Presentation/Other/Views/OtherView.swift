@@ -11,24 +11,26 @@ struct OtherView: View {
     @AppStorage("nickname") private var nickname: String = "(작성한 닉네임)"
     
     var body: some View {
-        VStack {
-            OtherHeaderView()
-            
-            VStack(alignment: .center) {
-                topView
+        NavigationStack {
+            VStack {
+                OtherHeaderView()
                 
-                Spacer()
-                
-                centerView
-                
-                Divider()
-                
-                Spacer()
-                
-                bottomView
+                VStack(alignment: .center) {
+                    topView
+                    
+                    Spacer()
+                    
+                    centerView
+                    
+                    Divider()
+                    
+                    Spacer()
+                    
+                    bottomView
+                }
+                .background(.white01)
+                .safeAreaPadding(EdgeInsets(top: 41, leading: 10, bottom: 41, trailing: 10))
             }
-            .background(.white01)
-            .safeAreaPadding(EdgeInsets(top: 41, leading: 10, bottom: 41, trailing: 10))
         }
     }
     
@@ -42,16 +44,17 @@ struct OtherView: View {
             + Text("님 \n환영합니다!🙌🏻")
             
             HStack(spacing: 10.5) {
-                ReusableButton(image: .starIcon, name: "별 히스토리") {
-                    print("별 히스토리")
+                
+                NavigationLink(destination: ReceiptView()) {
+                    ReusableButton(image: .starIcon, name: "별 히스토리")
                 }
             
-                ReusableButton(image: .receiptIcon, name: "전자 영수증") {
-                    print("전자 영수증")
+                NavigationLink(destination: ReceiptView()) {
+                    ReusableButton(image: .receiptIcon, name: "전자 영수증")
                 }
                 
-                ReusableButton(image: .myIcon, name: "나만의 메뉴") {
-                    print("나만의 메뉴")
+                NavigationLink(destination: ReceiptView()) {
+                    ReusableButton(image: .myIcon, name: "나만의 메뉴")
                 }
             }
         }

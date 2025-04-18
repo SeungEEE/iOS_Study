@@ -105,7 +105,7 @@ class ReceiptsViewModel: ImageHandling {
                     let index = matched.index(matched.startIndex, offsetBy: 10)
                     matched.insert(" ", at: index)
                 }
-                print("✅ 날짜 추출 성공: \(matched)")
+                
                 time = matched
             }
             i += 1

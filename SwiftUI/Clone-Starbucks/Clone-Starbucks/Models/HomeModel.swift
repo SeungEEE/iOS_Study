@@ -46,5 +46,3 @@ struct DessertCardModel: Identifiable {
     let dessertImage: UIImage
     let title: String
 }
-
-

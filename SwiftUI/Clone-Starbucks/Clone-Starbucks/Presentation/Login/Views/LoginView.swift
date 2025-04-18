@@ -13,19 +13,26 @@ struct LoginView: View {
     @FocusState private var idIsFocused: Bool
     @FocusState private var pwdIsFocused: Bool
     
+    @State private var isLoggedIn = false
+    
     var body: some View {
-        VStack(alignment: .leading) {
-            loginTopTitle
-            
-            Spacer()
-            
-            loginCenterTitle
-            
-            Spacer()
-            
-            loginBottomTitle
+        NavigationStack {
+            VStack(alignment: .leading) {
+                loginTopTitle
+                
+                Spacer()
+                
+                loginCenterTitle
+                
+                Spacer()
+                
+                loginBottomTitle
+            }
+            .safeAreaPadding(EdgeInsets(top: 104, leading: 19, bottom: 0, trailing: 19))
         }
-        .safeAreaPadding(EdgeInsets(top: 104, leading: 19, bottom: 0, trailing: 19))
+        .fullScreenCover(isPresented: $isLoggedIn) {
+            CustomTabView()
+        }
     }
     
     /// 상단 타이틀
@@ -71,7 +78,7 @@ struct LoginView: View {
                 )
             
             Button {
-                print("로그인 버튼입니다.")
+                isLoggedIn = true
             } label: {
                 Text("로그인하기")
                     .frame(maxWidth: .infinity)

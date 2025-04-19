@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     var viewModel: HomeViewModel = .init()
     @AppStorage("nickname") private var nickname: String?
+    @State private var popupPresented: Bool = true
     
     var body: some View {
         NavigationStack {
@@ -72,6 +73,9 @@ struct HomeView: View {
             
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea(.all)
+            .fullScreenCover(isPresented: $popupPresented) {
+                AdView()
+            }
         }
     }
     
@@ -104,6 +108,8 @@ struct HomeView: View {
             CoffeeScrollView(coffeeCards: viewModel.coffeeCard)
         }
         .padding(.horizontal, 10)
+        .padding(.leading, 10)
+        .padding(.trailing, 10)
     }
     
     /// 광고 메뉴 스크롤뷰
@@ -117,6 +123,8 @@ struct HomeView: View {
             
         }
         .padding(.horizontal, 10)
+        .padding(.leading, 10)
+        .padding(.trailing, 10)
     }
     
     /// 디저트 메뉴 스크롤뷰
@@ -129,6 +137,8 @@ struct HomeView: View {
             DessertScrollView(dessertCards: viewModel.dessertCard)
         }
         .padding(.horizontal, 10)
+        .padding(.leading, 10)
+        .padding(.trailing, 10)
     }
 }
 

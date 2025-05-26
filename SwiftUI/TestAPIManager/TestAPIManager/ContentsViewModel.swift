@@ -12,11 +12,30 @@ import Moya
 class ContentsViewModel {
     var userData: UserData?
     let provider: MoyaProvider<UserRotuer>
+    let loginProvider: MoyaProvider<AuthRouter>
     
-    init(provider: MoyaProvider<UserRotuer> = APIManager.shared.createProvider(for: UserRotuer.self)) {
+    init(provider: MoyaProvider<UserRotuer> = APIManager.shared.createProvider(for: UserRotuer.self),
+         loginProvider: MoyaProvider<AuthRouter> = APIManager.shared.createProvider(for: AuthRouter.self)) {
         self.provider = provider
+        self.loginProvider = loginProvider
     }
     
+    func loginAndStoreTokens() {
+        loginProvider.request(.login) { result in
+            switch result {
+            case .success(let response):
+                do {
+                    let tokenResponse = try JSONDecoder().decode(TokenResponse.self, from: response.data)
+                    let keychainInfo = KeychainManager.standard.saveSession(.init(accessToken: tokenResponse.accessToken, refreshToken: tokenResponse.refreshToken), for: "appNameUser")
+                    print("AccessToken, RefreshToken 저장 완료", keychainInfo)
+                } catch {
+                    print("토큰 디코딩 실패:", error)
+                }
+            case .failure(let error):
+                print("로그인 API 실패:", error)
+            }
+        }
+    }
     
     func getUser() async {
         do {
@@ -77,7 +96,6 @@ class ContentsViewModel {
         }
     }
 }
-
 
 extension MoyaProvider {
     func requestAsync(_ target: Target) async throws -> Response {

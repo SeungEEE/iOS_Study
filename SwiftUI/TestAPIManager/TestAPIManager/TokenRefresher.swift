@@ -26,6 +26,7 @@ class AccessTokenRefresher: @unchecked Sendable, RequestInterceptor {
     }
     
     func retry(_ request: Request, for session: Session, dueTo error: any Error, completion: @escaping (RetryResult) -> Void) {
+        print("🍎 리트라이 진입!!!!!! 🍎")
         guard request.retryCount < 1,
               let response = request.task?.response as? HTTPURLResponse,
               [401, 404].contains(response.statusCode) else {
@@ -45,3 +46,4 @@ class AccessTokenRefresher: @unchecked Sendable, RequestInterceptor {
         }
     }
 }
+

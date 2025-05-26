@@ -22,7 +22,7 @@ class TokenProvider: TokenProviding {
             guard var userInfo = keyChain.loadSession(for: userSession) else { return }
             userInfo.accessToken = newValue
             if keyChain.saveSession(userInfo, for: userSession) {
-                print("유저 액세스 토큰 갱신됨:\(String(describing: newValue))")
+                print("유저 액세스 토큰 갱신됨: \(String(describing: newValue))")
             }
         }
     }
@@ -43,8 +43,7 @@ class TokenProvider: TokenProviding {
     }
     
     func refreshToken(completion: @escaping (String?, (any Error)?) -> Void) {
-        guard let userInfo = keyChain.loadSession(for: userSession),
-                let refreshToken = userInfo.refreshToken else {
+        guard let userInfo = keyChain.loadSession(for: userSession), let refreshToken = userInfo.refreshToken else {
             let error = NSError(domain: "example.com", code: -2, userInfo: [NSLocalizedDescriptionKey: "UserSession or refreshToken not found"])
             completion(nil, error)
             return
@@ -58,25 +57,23 @@ class TokenProvider: TokenProviding {
                 } else {
                     print("JSON 데이터를 문자열로 변환할 수 없습니다.")
                 }
-                
+
                 do {
+                    
                     let tokenData = try JSONDecoder().decode(TokenResponse.self, from: response.data)
-                    if tokenData.isSuccess {
-                        self.accessToken = tokenData.result.accessToken
-                        self.refreshToken = tokenData.result.refreshToken
-                        completion(self.accessToken, nil)
-                    } else {
-                        let error = NSError(domain: "example.com", code: -1, userInfo: [NSLocalizedDescriptionKey: "Token Refresh failed: isSuccess false"])
-                        
-                        completion(nil, error)
-                    }
+
+                    
+                    self.accessToken = tokenData.accessToken
+                    self.refreshToken = tokenData.refreshToken
+
+                    completion(self.accessToken, nil)
                 } catch {
-                    print("디코딩 에러", error)
+                    print("디코딩 에러: \(error)")
                     completion(nil, error)
                 }
-                
+
             case .failure(let error):
-                print("네트워크 에러, \(error)")
+                print("네트워크 에러 : \(error)")
                 completion(nil, error)
             }
         }

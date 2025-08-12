@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 배너 더미 데이터
 struct BannerDataSource {
     static let bannerItems: [BannerItem] = [
         .init(image: .banner01),

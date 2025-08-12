@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 디저트 더미 데이터
 struct DessertDataSource {
     static let dessertItems: [DessertMenuItem] = [
         .init(name: "너티 크루아상", thumbnailImage: .dessert01),

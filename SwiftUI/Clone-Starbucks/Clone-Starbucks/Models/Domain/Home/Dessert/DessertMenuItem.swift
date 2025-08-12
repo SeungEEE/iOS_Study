@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 디저트 정보 담는 모델
 struct DessertMenuItem: Identifiable, MenuItemAttr {
     let id: UUID = .init()
     var name: String

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 커피 요약 아이템 모델
 struct CoffeeSummaryItem: Identifiable, MenuItemAttr {
     let id: UUID
     var name: String

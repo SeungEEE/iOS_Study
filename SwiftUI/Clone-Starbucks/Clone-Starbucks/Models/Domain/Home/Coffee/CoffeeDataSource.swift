@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// 커피 더미 데이터
 struct CoffeeDataSource {
     static let detailItems: [CoffeeMenuItem] = [
         .init(

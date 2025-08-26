@@ -9,61 +9,73 @@ import SwiftUI
 
 /// 커스텀 탭 뷰
 struct CustomTabView: View {
-    @State var selectedTab: Int = 0
+    
+    // MARK: - Property
+    
+    /// 현재 선택된 탭 상태
+    @State var tabCase: TabCase = .home
+    
+    /// 의존성 주입 DI Container
+    @EnvironmentObject var container: DIContainer
+    
+    /// 앱 광고 첫 진입시만 등장
+    @AppStorage("hasAd") private var hasShowAd: Bool = false
+    
+    
+    // MARK: - Body
     
     var body: some View {
-        TabView(selection: $selectedTab) {
-            Tab(value: 0, content: {
-                HomeView(container: DIContainer())
-            }, label: {
-                VStack {
-                    Image(.homeIcon)
-                        .renderingMode(.template)
-                    Text("Home")
+        NavigationStack(path: $container.navigationRouter.destination, root: {
+            TabView(selection: $tabCase) {
+                ForEach(TabCase.allCases, id: \.rawValue) { tab in
+                    Tab(value: tab, content: {
+                        tabView(tab: tab)
+                            .tag(tab)
+                    }, label: {
+                        tabLabel(tab)
+                    })
                 }
-            })
+            }
+            .tint(.green02)
+            .navigationDestination(for: NavigationDestination.self) { destination in
+                NavigationRoutingView(destination: destination)
+                    .environmentObject(container)
+            }
+            .task {
+                hasShowAd = false
+            }
+        })
+    }
+    
+    /// 아이콘 + 텍스트
+    private func tabLabel(_ tab: TabCase) -> some View {
+        VStack(spacing: 10) {
+            tab.icon
+                .renderingMode(.template)
             
-            Tab(value: 1, content: {
-                PayView()
-            }, label: {
-                VStack {
-                    Image(systemName: "creditcard")
-                    Text("Pay")
-                }
-            })
-            
-            Tab(value: 2, content: {
-                OrderView()
-            }, label: {
-                VStack {
-                    Image(.orderIcon)
-                        .renderingMode(.template)
-                    Text("Order")
-                }
-            })
-            
-            Tab(value: 3, content: {
-                ShopView()
-            }, label: {
-                VStack {
-                    Image(.shopIcon)
-                        .renderingMode(.template)
-                    Text("Shop")
-                }
-                
-            })
-            
-            Tab(value: 4, content: {
-                OtherView()
-            }, label: {
-                VStack {
-                    Image(systemName: "ellipsis")
-                    Text("Other")
-                }
-                
-            })
+            Text(tab.rawValue)
+                .font(.mainTextRegular12)
+                .foregroundStyle(.black01)
         }
-        .tint(.green02)
+    }
+    
+    /// 각 탭에 해당하는 탭뷰
+    @ViewBuilder
+    private func tabView(tab: TabCase) -> some View {
+        Group {
+            switch tab {
+            case .home:
+                HomeView(container: container)
+            case .pay:
+                PayView()
+            case .order:
+                OrderView()
+            case .shop:
+                ShopView()
+            case .other:
+                OtherView()
+            }
+        }
     }
 }
 
@@ -72,6 +84,7 @@ struct CustomTabView_Preview: PreviewProvider {
     static var previews: some View {
         ForEach(devices, id: \.self) { device in
             CustomTabView()
+                .environmentObject(DIContainer())
                 .previewDevice(PreviewDevice(rawValue: device))
                 .previewDisplayName(device)
         }

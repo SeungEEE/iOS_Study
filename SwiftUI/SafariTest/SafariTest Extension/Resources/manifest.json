@@ -1,61 +1,33 @@
 {
   "manifest_version": 3,
-  "default_locale": "en",
-
-  "name": "__MSG_extension_name__",
-  "description": "__MSG_extension_description__",
+  "name": "ArticleScraper",
   "version": "1.0",
-
-  "icons": {
-    "48": "images/icon-48.png",
-    "96": "images/icon-96.png",
-    "128": "images/icon-128.png",
-    "256": "images/icon-256.png",
-    "512": "images/icon-512.png"
-  },
-
-  "action": {
-    "default_popup": "popup.html",
-    "default_icon": {
-      "48": "images/toolbar-48.png",
-      "96": "images/toolbar-96.png",
-      "128": "images/toolbar-128.png"
-    }
-  },
-
+  "description": "기사 하이라이트 및 메모 저장 확장",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
   "background": {
-    "service_worker": "background.js",
-    "type": "module"
+    "service_worker": "background.js"
   },
-
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["https://*/*", "http://*/*"],
       "js": ["content.js"],
-      "run_at": "document_idle"
+      "run_at": "document_end"
     }
   ],
-
-  "web_accessible_resources": [
-    {
-      "resources": [
-        "content.css",
-        "images/*",
-        "panel.html"
-      ],
-      "matches": ["https://example.com/*"]
-    }
-  ],
-
-  "permissions": [
-    "storage"
-  ],
-
-  "host_permissions": [
-    "https://example.com/*"
-  ],
-
-  "optional_host_permissions": [
-    "<all_urls>"
-  ]
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "기사 스크랩"
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
 }

@@ -6,37 +6,44 @@
 //
 
 import SafariServices
-import os.log
 
 class SafariWebExtensionHandler: NSObject, NSExtensionRequestHandling {
-
     func beginRequest(with context: NSExtensionContext) {
-        let request = context.inputItems.first as? NSExtensionItem
-
-        let profile: UUID?
-        if #available(iOS 17.0, macOS 14.0, *) {
-            profile = request?.userInfo?[SFExtensionProfileKey] as? UUID
-        } else {
-            profile = request?.userInfo?["profile"] as? UUID
+        guard let item = context.inputItems.first as? NSExtensionItem,
+              let message = item.userInfo?["message"] as? [String: Any],
+              let url = message["url"] as? String,
+              let highlightsData = try? JSONSerialization.data(withJSONObject: message["highlights"] ?? []) else {
+            context.completeRequest(returningItems: nil, completionHandler: nil)
+            return
         }
 
-        let message: Any?
-        if #available(iOS 15.0, macOS 11.0, *) {
-            message = request?.userInfo?[SFExtensionMessageKey]
-        } else {
-            message = request?.userInfo?["message"]
+        do {
+            let decoder = JSONDecoder()
+            let highlights = try decoder.decode([SharedArticle.Highlight].self, from: highlightsData)
+            let article = SharedArticle(url: url, highlights: highlights)
+            saveToAppGroup(article)
+            print("✅ 하이라이트 포함 기사 저장 완료:", article.url)
+        } catch {
+            print("❌ 하이라이트 디코딩 실패:", error)
         }
 
-        os_log(.default, "Received message from browser.runtime.sendNativeMessage: %@ (profile: %@)", String(describing: message), profile?.uuidString ?? "none")
-
-        let response = NSExtensionItem()
-        if #available(iOS 15.0, macOS 11.0, *) {
-            response.userInfo = [ SFExtensionMessageKey: [ "echo": message ] ]
-        } else {
-            response.userInfo = [ "message": [ "echo": message ] ]
-        }
-
-        context.completeRequest(returningItems: [ response ], completionHandler: nil)
+        context.completeRequest(returningItems: nil, completionHandler: nil)
     }
 
+    private func saveToAppGroup(_ article: SharedArticle) {
+        guard let defaults = UserDefaults(suiteName: SharedConstants.appGroupID) else { return }
+        var list = loadAllArticles()
+        list.append(article)
+        if let data = try? JSONEncoder().encode(list) {
+            defaults.set(data, forKey: "sharedArticles")
+        }
+    }
+
+    private func loadAllArticles() -> [SharedArticle] {
+        guard let defaults = UserDefaults(suiteName: SharedConstants.appGroupID),
+              let data = defaults.data(forKey: "sharedArticles"),
+              let list = try? JSONDecoder().decode([SharedArticle].self, from: data)
+        else { return [] }
+        return list
+    }
 }

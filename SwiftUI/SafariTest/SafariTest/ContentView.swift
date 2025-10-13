@@ -74,6 +74,9 @@ struct ContentView: View {
         }
       }
       .navigationTitle("뉴BI스TOP")
+      .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+        savedArticles = loadArticles()     // 🔄 App Group에서 최신 목록 리로드
+      }
     }
   }
   

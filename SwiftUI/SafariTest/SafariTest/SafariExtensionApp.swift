@@ -14,25 +14,26 @@ struct SafariExtensionApp: App {
   var body: some Scene {
     WindowGroup {
       ContentView(sharedArticle: $sharedArticle)
-        .onOpenURL { url in
-          guard let comps = URLComponents(url: url, resolvingAgainstBaseURL: true),
-                comps.host == "share",
-                let dataParam = comps.queryItems?.first(where: { $0.name == "data" })?.value,
-                let decodedDataString = dataParam.removingPercentEncoding,
-                let jsonData = Data(base64Encoded: decodedDataString)
-          else {
-            print("❌ 잘못된 공유 데이터")
-            return
-          }
+        .onOpenURL  { url in
+          guard url.host == "share",
+                let dataParam = url.queryItems["data"] else { return }
           
-          do {
-            let article = try JSONDecoder().decode(SharedArticle.self, from: jsonData)
+          if let decodedData = Data(base64Encoded: dataParam),
+             let article = try? JSONDecoder().decode(SharedArticle.self, from: decodedData) {
             sharedArticle = article
             print("✅ 공유받은 기사:", article.url)
-          } catch {
-            print("❌ 디코딩 실패:", error)
+          } else {
+            print("❌ 공유 데이터 파싱 실패")
           }
         }
     }
+  }
+}
+
+extension URL {
+  var queryItems: [String: String] {
+    URLComponents(url: self, resolvingAgainstBaseURL: false)?
+      .queryItems?
+      .reduce(into: [:]) { $0[$1.name] = $1.value } ?? [:]
   }
 }

@@ -8,5 +8,8 @@
 import Foundation
 
 class UseCaseService {
-    
+    let kakaoManager: KakaoLoginManager
+  init(kakaoManager: KakaoLoginManager) {
+    self.kakaoManager = kakaoManager
+  }
 }

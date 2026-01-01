@@ -2,13 +2,18 @@
 //  EditWebViewController.swift
 //  SafariTest
 //
+<<<<<<< Updated upstream
 //  Created by 이안 on 10/13/25.
+=======
+//  Created by 이승진 on 10/13/25.
+>>>>>>> Stashed changes
 //
 
 import UIKit
 import WebKit
 
 final class EditWebViewController: UIViewController, WKScriptMessageHandler, WKNavigationDelegate {
+<<<<<<< Updated upstream
   
   private let article: SharedArticle
   private let onSave: (SharedArticle) -> Void
@@ -374,4 +379,165 @@ private extension EditWebViewController {
     // 여긴 별도 로직 없음. core에서 collect()가 postMessage 호출.
   })();
   """
+=======
+//  private var web: WKWebView!
+//  private let article: SharedArticle
+//
+//  init(article: SharedArticle) {
+//    self.article = article
+//    super.init(nibName: nil, bundle: nil)
+//  }
+//  required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
+  var article: SharedArticle!
+    var onSave: ((SharedArticle) -> Void)?
+    var onCancel: (() -> Void)?
+
+    convenience init(article: SharedArticle,
+                     onSave: @escaping (SharedArticle) -> Void,
+                     onCancel: @escaping () -> Void) {
+      self.init(nibName: nil, bundle: nil)
+      self.article = article
+      self.onSave = onSave
+      self.onCancel = onCancel
+    }
+
+    required init?(coder: NSCoder) { super.init(coder: coder) }
+
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.backgroundColor = .systemBackground
+
+    // 1) 구성 + content.js 삽입
+    let cfg = WKWebViewConfiguration()
+    cfg.userContentController.add(self, name: "native")
+
+    // (1) content.js 번들에 넣어둔 파일 읽어서 주입 (지금 사파리용 content.js 재사용)
+    if let url = Bundle.main.url(forResource: "content", withExtension: "js"),
+       let js = try? String(contentsOf: url) {
+      let script = WKUserScript(source: js, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+      cfg.userContentController.addUserScript(script)
+    }
+
+    // (2) 네이티브 ↔︎ JS 브리지 헬퍼 (아래 2장에서 JS 함수 정의)
+    let bridgeJS = """
+    // 네이티브에서 호출: 저장된 하이라이트 적용
+    window.__AS_LOAD_SAVED__ = function(saved) {
+      try {
+        if (!Array.isArray(saved)) return;
+        // content.js가 restoreHighlights 로직을 이미 갖고 있으면,
+        // "quote"와 "color","memo"를 이용해 문장 매칭해서 래핑하면 됨.
+        // 여기선 간단히 저장 포맷을 localStorage에 넣고, 기존 restore를 재사용하는 방식도 가능.
+        (window.__AS_APPLY_SAVED && window.__AS_APPLY_SAVED__(saved));
+      } catch(e) { console.error(e); }
+    };
+
+    // JS → 네이티브로 현재 상태 전달
+    window.__AS_EXPORT_TO_APP__ = function(payload) {
+      if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.native) {
+        window.webkit.messageHandlers.native.postMessage({ type: "save", data: payload });
+      }
+    };
+    """
+    let bridgeScript = WKUserScript(source: bridgeJS, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+    cfg.userContentController.addUserScript(bridgeScript)
+
+    web = WKWebView(frame: view.bounds, configuration: cfg)
+    web.navigationDelegate = self
+    web.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    view.addSubview(web)
+
+    navigationItem.rightBarButtonItem = UIBarButtonItem(title: "저장", style: .done, target: self, action: #selector(saveTapped))
+
+    // 2) 페이지 열기
+    if let u = URL(string: article.url) {
+      web.load(URLRequest(url: u))
+    }
+  }
+
+  // 페이지 로드 완료 → 저장된 하이라이트를 JS로 전달해 복원
+  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+    let saved = article.highlights // [SharedArticle.Highlight]
+    if let data = try? JSONEncoder().encode(saved),
+       let json = String(data: data, encoding: .utf8) {
+      let inject = "window.__AS_LOAD_SAVED__(\(json));"
+      webView.evaluateJavaScript(inject, completionHandler: nil)
+    }
+  }
+
+  // 네비바 "저장" 눌렀을 때 → JS에게 현재 하이라이트 수집 요청
+  @objc private func saveTapped() {
+    // content.js에 수집 함수가 이미 있다면 그걸 호출
+    let collectJS = """
+    (function(){
+      if (window.__AS_COLLECT__) {
+        var payload = window.__AS_COLLECT__(); // { url, highlights:[{sentence,color,memo}] }
+        window.__AS_EXPORT_TO_APP__(payload);
+      } else if (window.shareHighlights) {
+        // 기존 shareHighlights가 navigator.share로만 보내면 수집만 해서 넘겨주는 버전 하나 더 만들어두자
+        var p = (window.__AS_COLLECT__ && window.__AS_COLLECT__()) || { url: location.href, highlights: [] };
+        window.__AS_EXPORT_TO_APP__(p);
+      } else {
+        // 최소 fallback
+        window.__AS_EXPORT_TO_APP__({ url: location.href, highlights: [] });
+      }
+    })();
+    """
+    web.evaluateJavaScript(collectJS, completionHandler: nil)
+  }
+
+  // JS → Native
+  func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    guard message.name == "native",
+          let body = message.body as? [String: Any],
+          let type = body["type"] as? String,
+          type == "save",
+          let data = body["data"] as? [String: Any],
+          let url = data["url"] as? String,
+          let arr = data["highlights"] as? [[String: Any]] else { return }
+
+    let highlights: [SharedArticle.Highlight] = arr.compactMap { d in
+      guard let sentence = d["sentence"] as? String else { return nil }
+      return .init(sentence: sentence, color: d["color"] as? String, memo: d["memo"] as? String)
+    }
+
+    // App Group에 병합 저장 (중복 문장 제거/업데이트)
+    let updated = mergeIntoAppGroup(url: url, incoming: highlights)
+    print("✅ 편집 저장 완료: \(url) (\(updated.count) highlights)")
+    navigationController?.popViewController(animated: true)
+  }
+
+  // 문장 기준 중복 제거 + 메모/색상 업데이트
+  private func mergeIntoAppGroup(url: String, incoming: [SharedArticle.Highlight]) -> [SharedArticle.Highlight] {
+    guard let defaults = UserDefaults(suiteName: SharedConstants.appGroupID) else { return incoming }
+    var list = (try? JSONDecoder().decode([SharedArticle].self,
+                 from: defaults.data(forKey: SharedConstants.storeKey) ?? Data())) ?? []
+
+    // 같은 URL 기사 찾기 (없으면 새로 추가)
+    if let idx = list.firstIndex(where: { $0.url == url }) {
+      var base = list[idx]
+
+      // 기존 + 신규 병합 (sentence를 키로)
+      var map = Dictionary(uniqueKeysWithValues: base.highlights.map { ($0.sentence, $0) })
+      for h in incoming {
+        if var old = map[h.sentence] {
+          // 업데이트 정책: memo가 비어있지 않으면 덮어쓰기, color 있으면 갱신
+          if let m = h.memo { old = .init(sentence: old.sentence, color: h.color ?? old.color, memo: m) }
+          else if let c = h.color { old = .init(sentence: old.sentence, color: c, memo: old.memo) }
+          map[h.sentence] = old
+        } else {
+          map[h.sentence] = h
+        }
+      }
+      base.highlights = Array(map.values)
+      list[idx] = base
+    } else {
+      list.append(.init(url: url, highlights: incoming))
+    }
+
+    if let encoded = try? JSONEncoder().encode(list) {
+      defaults.set(encoded, forKey: SharedConstants.storeKey)
+    }
+    return list.first(where: { $0.url == url })?.highlights ?? incoming
+  }
+>>>>>>> Stashed changes
 }

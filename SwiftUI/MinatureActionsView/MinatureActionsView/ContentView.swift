@@ -22,17 +22,29 @@ struct ContentView: View {
       }
       .navigationTitle("Apple Books")
     }
-    .overlay {
-      MiniatureAction(animation: animation, isPresented: $isPresented) {
-        ActionContent()
-      } background: {
-        ZStack {
-          Capsule()
-            .fill(.background)
-          Capsule()
-            .fill(.ultraThinMaterial)
+    .overlay(alignment: .topLeading) {
+      ZStack(alignment: .bottomTrailing) {
+        Rectangle()
+          .fill(.primary.opacity(isPresented ? 0.2 : 0))
+          .allowsHitTesting(isPresented)
+          .onTapGesture {
+            isPresented = false
+          }
+          .animation(animation, value: isPresented)
+          .ignoresSafeArea()
+        MiniatureAction(animation: animation, isPresented: $isPresented) {
+          ActionContent()
+        } background: {
+          ZStack {
+            Capsule()
+              .fill(.background)
+            Capsule()
+              .fill(.ultraThinMaterial)
+          }
+          .shadow(color: .gray.opacity(0.5), radius: 1)
         }
-        .shadow(color: .gray.opacity(0.5), radius: 1)
+        .padding(.trailing, 15)
+        .padding(.bottom, 10)
       }
     }
   }
@@ -40,17 +52,17 @@ struct ContentView: View {
   @ViewBuilder
   func ActionContent() -> some View {
     VStack(spacing: 10) {
-      CustomButton(title: "Search Book", symbol: "magnifyingglass")
+      CustomButton(title: "Search Book", symbol: "magnifyingglass", isPresented: $isPresented)
         .frame(width: 250, height: 45)
-      CustomButton(title: "Themes & Setting", symbol: "textformat.size")
+      CustomButton(title: "Themes & Setting", symbol: "textformat.size", isPresented: $isPresented)
         .frame(width: 250, height: 45)
       
       /// Horizontal Actions
       HStack(spacing: 10) {
-        CustomSectionButton(symbol: "square.and.arrow.up")
-        CustomSectionButton(symbol: "lock.rotation")
-        CustomSectionButton(symbol: "text.line.magnify")
-        CustomSectionButton(symbol: "bookmark")
+        CustomSectionButton(symbol: "square.and.arrow.up", isPresented: $isPresented)
+        CustomSectionButton(symbol: "lock.rotation", isPresented: $isPresented)
+        CustomSectionButton(symbol: "text.line.magnify", isPresented: $isPresented)
+        CustomSectionButton(symbol: "bookmark", isPresented: $isPresented)
       }
       .font(.title3)
       .fontWeight(.medium)
@@ -60,7 +72,7 @@ struct ContentView: View {
   }
   
   var animation: Animation {
-    .smooth(duration: 0.5, extraBounce: 0)
+    .smooth(duration: 0.35, extraBounce: 0)
   }
 }
 
@@ -68,6 +80,7 @@ struct ContentView: View {
 struct CustomButton: View {
   var title: String
   var symbol: String
+  @Binding var isPresented: Bool
   var action: () -> () = {}
   var body: some View {
     Button(action: action) {
@@ -78,20 +91,44 @@ struct CustomButton: View {
       }
       .padding(.horizontal, 20)
       .frame(maxWidth: .infinity, maxHeight: .infinity)
-      .background(.background, in: .capsule)
+      .opacity(isPresented ? 1 : 0)
+      .background {
+        ZStack {
+          Rectangle()
+            .fill(.primary)
+            .opacity(isPresented ? 0 : 1)
+          
+          Rectangle()
+            .fill(.background)
+            .opacity(isPresented ? 1 : 0)
+        }
+        .clipShape(.capsule)
+      }
     }
   }
 }
 
 struct CustomSectionButton: View {
   var symbol: String
+  @Binding var isPresented: Bool
   var action: () -> () = {}
   var body: some View {
     Button(action: action) {
       Image(systemName: symbol)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(.background, in: .capsule
-        )
+        .opacity(isPresented ? 1 : 0)
+        .background {
+          ZStack {
+            Rectangle()
+              .fill(.primary)
+              .opacity(isPresented ? 0 : 1)
+            
+            Rectangle()
+              .fill(.background)
+              .opacity(isPresented ? 1 : 0)
+          }
+          .clipShape(.capsule)
+        }
     }
   }
 }

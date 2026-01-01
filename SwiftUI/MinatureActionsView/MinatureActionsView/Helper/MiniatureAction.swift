@@ -20,7 +20,7 @@ struct MiniatureAction<Actions: View, Background: View>: View {
       .allowsHitTesting(isPresented)
       .contentShape(.rect)
       .compositingGroup()
-      /// Scaling the actions to fit into the button size using the visual effect modifier
+    /// Scaling the actions to fit into the button size using the visual effect modifier
       .visualEffect({ [innerScaling, minimisedButtonSize, isPresented] content, proxy in
         let maxValue = max(proxy.size.width, proxy.size.height)
         let minButtonValue = min(minimisedButtonSize.width, minimisedButtonSize.height)
@@ -30,13 +30,36 @@ struct MiniatureAction<Actions: View, Background: View>: View {
           .scaleEffect(isPresented ? 1 : modifiedInnerScale)
           .scaleEffect(isPresented ? 1 : fitScale)
       })
+    /// Act's like a button tap to expend actions
+      .overlay {
+        if !isPresented {
+          Capsule()
+            .foregroundStyle(.clear)
+            .frame(width: minimisedButtonSize.width, height: minimisedButtonSize.height)
+            .contentShape(.capsule)
+            .onTapGesture {
+              isPresented = true
+            }
+            .transition(.identity)
+        }
+      }
       .background(
         background
           .frame(
-            width: minimisedButtonSize.width,
-            height: minimisedButtonSize.height
+            width: isPresented ? nil : minimisedButtonSize.width,
+            height: isPresented ? nil : minimisedButtonSize.height
           )
+          .compositingGroup()
+        /// Fading out with blur
+          .opacity(isPresented ? 0 : 1)
+          .blur(radius: isPresented ? 30 : 0)
       )
+      .fixedSize()
+      .frame(
+        width: isPresented ? nil : minimisedButtonSize.width,
+        height: isPresented ? nil : minimisedButtonSize.height
+      )
+      .animation(animation, value: isPresented)
   }
 }
 

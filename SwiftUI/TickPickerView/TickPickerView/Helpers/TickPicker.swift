@@ -17,7 +17,7 @@ struct TickConfig {
   var inActiveTint: Color = .primary
   var alignment: Alignment = .bottom
   var animation: Animation = .interpolatingSpring(duration: 0.3, bounce: 0, initialVelocity: 0)
-    
+  
   enum Alignment: String, CaseIterable {
     case top = "Top"
     case bottom = "Bottom"
@@ -36,12 +36,16 @@ struct TickConfig {
 struct TickPicker: View {
   var count: Int
   var config: TickConfig = .init()
+  
   @Binding var selection: Int
+  
   /// View Properties
   @State private var scrollIndex: Int = 0
   @State private var scrollPosition: Int?
   @State private var scrollPhase: ScrollPhase = .idle
   @State private var animationRange: ClosedRange<Int> = 0...0
+  @State private var isInitialSetupDone: Bool = false
+  
   var body: some View {
     GeometryReader {
       let size = $0.size
@@ -59,7 +63,8 @@ struct TickPicker: View {
       .scrollIndicators(.hidden)
       .scrollTargetBehavior(.viewAligned(limitBehavior: .alwaysByOne))
       .scrollPosition(id: $scrollPosition, anchor: .center)
-      /// Centering Tick start and end
+      
+      /// 중심 맞추기
       .safeAreaPadding(.horizontal, (size.width - width) / 2)
       .onScrollGeometryChange(for: CGFloat.self) {
         $0.contentOffset.x + $0.contentInsets.leading
@@ -77,9 +82,36 @@ struct TickPicker: View {
       }
       .onScrollPhaseChange { oldPhase, newPhase in
         scrollPhase = newPhase
+        animationRange = scrollIndex...scrollIndex
+        
+        /// 일부 희귀한 경우에는 보기 정렬된 대상 동작이 항목의 중심이 되지 않을 수 있음
+        if newPhase == .idle && scrollPosition != scrollIndex {
+          withAnimation(config.animation) {
+            scrollPosition = scrollIndex
+          }
+        }
       }
     }
     .frame(height: config.interactionHeight)
+    .task {
+      guard !isInitialSetupDone else { return }
+      
+      /// 초기 스크롤 설정
+      updateScrollPosition(selection: selection)
+      
+      /// 옵셔널
+      try? await Task.sleep(for: .seconds(0.05))
+      
+      isInitialSetupDone = true
+    }
+    /// 초기 설정이 완료된 후에만 상호작용 활성화
+    .onChange(of: scrollIndex) { oldValue, newValue in
+      selection = newValue
+    }
+    .onChange(of: selection) { oldValue, newValue in
+      guard scrollIndex != newValue else { return }
+      updateScrollPosition(selection: newValue)
+    }
   }
   
   /// Tick View
@@ -96,14 +128,20 @@ struct TickPicker: View {
         height: height * (isInside ? 1 : config.inActiveHeightProgress)
       )
       .frame(width: width, height: height, alignment: config.alignment.value)
-      .animation(isInside ? .none : config.animation, value: isInside)
+      .animation(isInside || !isInitialSetupDone ? .none : config.animation, value: isInside)
+  }
+  
+  func updateScrollPosition(selection: Int) {
+    let safeSelection = max(min(selection, count), 0)
+    scrollPosition = safeSelection
+    scrollIndex = safeSelection
+    animationRange = safeSelection...safeSelection
   }
   
   var width: CGFloat {
     return config.tickWidth + (config.tickPadding * 2)
   }
 }
-
 
 #Preview {
   ContentView()

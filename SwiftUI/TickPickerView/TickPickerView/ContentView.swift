@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
-  @State private var selection: Int = 0
+  @State private var selection: Int = 5
   var body: some View {
     NavigationStack {
-      VStack {
-        TickPicker(count: 100, selection: $selection)
+      VStack(spacing: 0) {
+        TickPicker(count: 100, config: config, selection: $selection)
+        Text("\(selection)")
+          .monospaced()
+          .fontWeight(.medium)
+        
+        Button("Update to 20") {
+          selection = 20
+        }
       }
+      .navigationTitle("Tick Picker")
     }
-    .navigationTitle("Tick Picker")
+  }
+  
+  var config: TickConfig {
+    return .init(
+      tickWidth: 2,
+      alignment: .bottom
+    )
   }
 }
 

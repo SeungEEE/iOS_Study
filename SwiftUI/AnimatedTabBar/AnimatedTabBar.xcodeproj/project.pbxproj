@@ -16,6 +16,11 @@
 			path = AnimatedTabBar;
 			sourceTree = "<group>";
 		};
+		3C7B41C12F20AA7F0062ACF0 /* Helpers */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +37,7 @@
 		3C59C9B92F1FA0F400E40F87 = {
 			isa = PBXGroup;
 			children = (
+				3C7B41C12F20AA7F0062ACF0 /* Helpers */,
 				3C59C9C42F1FA0F400E40F87 /* AnimatedTabBar */,
 				3C59C9C32F1FA0F400E40F87 /* Products */,
 			);
@@ -62,6 +68,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				3C59C9C42F1FA0F400E40F87 /* AnimatedTabBar */,
+				3C7B41C12F20AA7F0062ACF0 /* Helpers */,
 			);
 			name = AnimatedTabBar;
 			packageProductDependencies = (
